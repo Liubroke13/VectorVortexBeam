@@ -1,0 +1,618 @@
+\chapter{理論}
+\label{ch:relatedwork}
+
+
+% 連結SHG&DFT
+
+% 2-1
+\section{二次諧波產生(Second Harmonic Generation, SHG)基本理論}
+\subsection{古典電偶極(Dipole)與簡諧振盪(Harmonic oscillator)模型}
+古典物理中，描述光在介質中傳播的模型是在19世紀末以馬克士威(Maxwell)的電磁波理論以及偶極振盪的觀念發展而成的。此模型假設材料中有不同形式的振盪子(oscillator)，每個振盪子都有其特徵的共振頻率，在光學頻率的範圍內，最主要的貢獻是來自原子中束縛電子的振盪。振盪的電偶極會輻射出電磁波，此現象已在1887年由 Heinrich Hertz 在實驗室內成功產生並接收到無線電波得到證實。\cite{fox2010optical}
+
+%參考文獻
+Henrick Antoon Lorentz於1878年提出將原子視為振盪電偶極的模型。模型中，電子與原子核形成一個電偶極，偶極矩的大小與電子和原子核之間的距離成正比。由於原子核質量遠大於電子，可忽略原子核的運動。電子在簡諧回復力作用下的自然共振頻率為
+\begin{equation}
+    \omega_0=\sqrt{\frac{K_s}{m_0}}
+\end{equation}
+其中$K_s$為彈簧常數，$m_0$為電子的質量。由於原子有多個能階，必須假設多個振盪子以解釋多種共振頻率。電偶極矩定義為
+\begin{equation}
+    \mathbf{p}=q(\mathbf{r}_+-\mathbf{r}_-)
+\end{equation}
+其中$q$為電荷量，$\mathbf{r}_+,\mathbf{r}_-$分別為正負電荷的位置。電子位移$x(t)$相對於平衡位置時，偶極矩隨時間變化為
+% 這個偶極的振盪會激發出電磁波，並且其頻率決定了原子的發射或吸收光譜。
+% 在原子偶極振盪的過程中，因原子核的質量較大，幾乎維持靜止；而電子則會以頻率$\omega_0$來回振盪。因此會產生隨時間變化的偶極:
+\begin{equation}
+    p(t)=-ex(t)
+\end{equation}
+其振盪頻率為$\omega_0$，會輻射出$\omega_0$頻率的電磁波。
+% 其中$x(t)$為電子相對於平衡位置的時間變化位移，$p(t)$為隨時間變化的偶極，$e$為電子的電荷量。根據古典的赫茲偶極理論，此振盪的偶極會輻射出頻率為$\omega_0$的電磁波，因此只要原子獲得足夠的能量來激發這種振盪，就可預期其輻射出此共振頻率的光。
+
+\subsection{簡諧振盪(Harmonic oscillator)與線性極化響應}
+
+考慮電子受到光場的驅動，在阻尼簡諧振盪模型中，電子的位移滿足的運動方程:
+\begin{equation}
+m_0\frac{d^2x}{dt^2}+m_0\gamma \frac{dx}{dt}+m_0\omega_0^2x=-e\mathcal{E}(t)
+\label{eq:equation of motion}
+\end{equation}
+其中$\gamma$為阻尼率，$e$為電子的電荷量，$\mathcal{E}(t)$是光波的電場。式(~\ref{eq:equation of motion})中左邊三項依序為加速度項、阻尼項與回復力項；而右邊則是來自光波中隨時變電場的驅動力。假設以頻率$\omega$的光其電場可表示為:
+\begin{equation}
+    \mathcal{E}(t)=\mathcal{E}_0e^{-i\omega t}
+\label{eq:electric field}
+\end{equation}
+$\mathcal{E}_0$為電場的振幅。此電場將會驅動原子以相同的頻率$\omega$發生振盪，因此假設電子的位移為:
+\begin{equation}
+x(t)=X_0e^{-i\omega t}
+\label{eq:displacement_0}
+\end{equation}
+$X_0$為振幅。將式(~\ref{eq:electric field})與式(~\ref{eq:displacement_0})代入運動方程式(~\ref{eq:equation of motion}):
+\begin{equation}
+     -m_0\omega^2X_0e^{-i\omega t}-m_0\gamma\omega X_0 e^{-i\omega t}+m_0 \omega_0^2 X_0 e^{-i\omega t}=-e\mathcal{E}_0e^{-i\omega t}
+\end{equation}
+可以計算出位移振福
+\begin{equation}
+    X_0=\frac{-e\mathcal{E}_0/m_0}{\omega_0^2-\omega^2-i\gamma \omega}
+\end{equation}
+電子的振盪位移$x(t)$會產生一個隨時間變化的偶極矩$p(t)=-ex(t)$。若每單位體積中有$N$個原子，則總體極化量為:
+\begin{equation}
+    P(t)=Np(t)=-NeX_0 e^{-i\omega t}=\frac{Ne^2}{m_0}\frac{1}{\omega_0^2-\omega^2-i\gamma\omega}\mathcal{E}_0e^{-i\omega t}
+\end{equation}
+也可簡寫為
+\begin{equation}
+    \mathbf{P}(t)=\epsilon_0\chi^{(1)}(\omega)\mathcal{E}(t)
+\end{equation}
+其中線性極化率為
+\begin{equation}
+    \chi^{(1)}(\omega)=\frac{Ne^2}{\epsilon_0m_0}\frac{1}{\omega^2_0-\omega^2-i\gamma\omega}
+\end{equation}
+由此式可知，只有當光的頻率$\omega$皆進系統的共振頻率$\omega_0$時，極化率與極化強度才會顯著提升，否則皆相對較小。
+% 除非光的頻率$\omega$接近共振頻率$\omega_0$，極化率以及極化強度皆相對較小。
+% 總體極化量$P$的大小通常很小。
+
+\subsection{非線性極化}
+我們假設電子是由簡諧的回復力束縛在原子中，當光對系統施加驅動力時，電子的位移與電場會呈線性關係，但此線性關係只有在位移很小時才成立。若該系統受到強雷射光束等強場的驅動時，電子的位移會變得很大，此時位移與電場的關係可能就不再是為線性關係。為了描述這種非線性的效應，我們假設電子是被束縛在一個非簡諧(anharmonic)位能中，其形式為
+\begin{equation}
+    U(x)=\frac{1}{2}m_0\omega_0^2x^2+\frac{1}{3}m_0C_3 x^3+\frac{1}{4}m_0C_4 x^4+\dots
+\label{eq:potential}
+\end{equation}
+其中$\omega_0$為自然共振頻率，而$x=0$表示電子的平衡位置。假設$\omega_0^2 \gg C_3x \gg C_4 x^2$，非線性項相對較小。在這邊我們主要探討二階效應，因此僅保留位能式中與$x^3$項相關的貢獻
+% 在這邊我們聚焦在二階的效應，因此我們只考慮式(~\ref{eq:potential})中的$x^3$項
+，因此位能為$U=\frac{1}{2}m\omega_0^2x^2+\frac{1}{3}m_0C_3x^3$，如圖(~\ref{fig:Lorentz model potential})，電子所到的實際的位能不完全是拋物線形的。可將回復力表示為
+\begin{equation}
+F(x)=-\frac{dU}{dx}=-(m_0\omega_0^2x+m_0C_3x^2)
+\end{equation}
+由此式可知回復力的大小會與位移的方向有關，電子在正方向位移時受到的回復力比在負方向位移時受到的力大。
+當電場為正時，由於回復力較強，電子位移較小；反之，電場為負時位移較大，導致偶極與極化出現非對稱響應。這種不對稱性正是非線性極化的來源。
+這表示極化$P$與電場$\mathcal{E}$之間的關係不再是線性的，而會包含高次項的貢獻。
+%再改一下
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Lorentz model potential.png}
+    \caption{在非中心對稱系統的位能。\cite{boyd2008nonlinear}}
+    \label{fig:Lorentz model potential}
+\end{figure}
+
+極化向量與電場之間的非線性關係如圖~\ref{fig:SHG_theory_figure}所示。當外加電場較微弱時，極化響應與虛線所示的線性關係幾乎一致；
+% 實際的響應與虛線所表示的線性響應幾乎無差異，偏離較小，如圖所示，此時的極化幾乎跟隨外加電場。
+然而，當外加電場的強度增加，系統的響應便會變得不對稱，尤其是在電場為負時，電子的位移變大，導致極化與電場不再同步。對非線性材料施加正弦電場時，所得到的響應將會變成失真的波型。\cite{fox2010optical}
+% 如圖，對一個非線性材料施加正弦電場後，所得到的輸出將不再是純正弦波，而是失真的波形。\cite{fox2010optical}
+%圖
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\linewidth]{SHG.png}
+    \caption{化合物半導體SHG效應示意圖(a)單一元素受到隨時變電場$\mathcal{E}(t)$影響，引發電偶極線性響應震盪。(b)化合物半導體受到$\mathcal{E}$的電場，因化合物半導體由不只一種元素組成，原子結構不再保有對稱，在隨時變電場$\mathcal{E}(t)$影響下，因此產生非線性電偶極震盪。\cite{fox2010optical}}
+    \label{fig:SHG_theory_figure}
+\end{figure}
+
+\subsubsection{非線性極化向量}
+當極化與電場的關係為非線性時，可以利用非線性極化的展開式來描述此現象:
+\begin{equation}
+    \mathbf{P}^{nonlinear}=P^{(1)}+P^{(2)}+P^{(3)}+\dots
+\end{equation}
+其中每一階項，可以依據電場強度$\mathcal{E}$展開為:
+% 我們可以將此式由$P=\epsilon_0\chi \mathcal{E}$寫為:
+\begin{equation}
+P_i=\epsilon_0\chi^{(1)}_{ij}\mathcal{E}_k+\epsilon_0\chi^{(2)}_{ijk}\mathcal{E}_j\mathcal{E}_k+\epsilon_0\chi^{(3)}_{ijkl}\mathcal{E}_j\mathcal{E}_k\mathcal{E}_l+\dots
+\end{equation}
+其中$P$為非線性極化向量，$\epsilon_0$為介電常數，$\chi^{(n)}$為$n$階極化率。若電場為
+\begin{equation}
+    \mathcal{E}(t)=\mathcal{E}_0\cos{(\omega t)}
+\end{equation}
+代入二階非線性極化項
+\begin{equation}
+    P^{(2)}_i=\epsilon_0\chi^{(2)}_{ijk}\mathcal{E}_j\mathcal{E}_k
+\label{eq:P_2}
+\end{equation}
+可以得到:
+\begin{equation}
+    P^{(2)}(t)=\epsilon_0\chi^{(2)}\mathcal{E}_0^2\cos^2{\omega t}=\frac{1}{2}\epsilon_0\chi^{(2)}\mathcal{E}_0^2(1-\sin{2\omega t})
+\label{eq:2w}
+\end{equation}
+若$\chi^{(2)}$不為零，則當介質受到頻率$\omega$的驅動時，會產生一個頻率為$2\omega$的輸出波。
+
+
+
+\subsection{非線性極化張量及其對稱性}
+
+二階非線性極化率$\chi^{(2)}$為三階張量，可將式(~\ref{eq:P_2})展開為:
+\begin{equation}
+    \begin{pmatrix}
+    P_x^{(2)} \\
+    P_y^{(2)} \\
+    P_z^{(2)}
+    \end{pmatrix}
+    = \epsilon_0
+    \begin{pmatrix}
+    \chi^{(2)}_{xxx} & \chi^{(2)}_{xyy} & \chi^{(2)}_{xzz} & \chi^{(2)}_{xyz} & \chi^{(2)}_{xxz} & \chi^{(2)}_{xxy} \\
+    \chi^{(2)}_{yxx} & \chi^{(2)}_{yyy} & \chi^{(2)}_{yzz} & \chi^{(2)}_{yyz} & \chi^{(2)}_{yxz} & \chi^{(2)}_{yxy} \\
+    \chi^{(2)}_{zxx} & \chi^{(2)}_{zyy} & \chi^{(2)}_{zzz} & \chi^{(2)}_{zyz} & \chi^{(2)}_{zxz} & \chi^{(2)}_{zxy}
+    \end{pmatrix}
+    \begin{pmatrix}
+    \mathcal{E}_x \mathcal{E}_x \\
+    \mathcal{E}_y \mathcal{E}_y \\
+    \mathcal{E}_z \mathcal{E}_z \\
+    2 \mathcal{E}_y \mathcal{E}_z \\
+    2 \mathcal{E}_z \mathcal{E}_x \\
+    2 \mathcal{E}_x \mathcal{E}_y
+    \end{pmatrix}.
+    \label{eq:chi_tensor}
+\end{equation}
+
+透過密度泛函理論(Density Functional Theory, DFT)計算$\chi^{(2)}$，並利用晶體對稱性及群論（Neumann principle）\cite{newnham2004properties}，可判定$\chi^{(2)}$張量中哪些元素為零或非零，這對材料設計與實驗解析非常重要。
+
+根據Neumann原理\cite{newnham2004properties}，晶體的物理性質必須與晶體的對稱性有一致的對稱操作。換言之，晶體的任何物理量，必須在晶體對稱性操作下保持不變。對於材料的非線性光學係數$\chi^{(2)}_{ijk}$張量中，只有在符合晶體對稱性限制的張量元可能為非零值。這表示僅有缺乏中心對稱性的晶體才可能出現非零的$\chi^{(2)}$，進而有二次諧波產生效應的發生。張量在對稱性操作下的轉換可以寫為
+\begin{equation}
+\chi^{(2)'}_{ijk}=a_{il}a_{jm}a_{kn}\chi^{(2)}_{lmn}
+\label{eq:Neumann principle transformation}
+\end{equation}
+其中$\chi^{(2)}_{lmn}$與$\chi^{(2)'}_{ijk}$為經過對稱性操作前後的二階極化率張量元，$a_{il}、a_{jm}、a_{kn}$表示為對稱性操作矩陣$a$的矩陣元。若晶體具有此對稱元素，則其張量會在該對稱性操作下必須保持不變，即
+\begin{equation}
+    \chi^{(2)'}_{ijk}=\chi^{(2)}_{ijk}
+\end{equation}
+以具中心對稱性的晶體為例，其須滿足反演操作$\hat{I}$(Inversion Symmetry)，即對所有空間座標相對原點進行反向對稱。其矩陣形式如下
+\begin{equation}
+    \hat{I}=\begin{pmatrix}
+        -1 & 0 & 0 \\
+        0 & -1 & 0 \\
+        0 & 0 & -1 
+    \end{pmatrix}
+\end{equation}
+在此對稱操作下，非線性極化張量$\chi^{(2)}$經對稱性轉換後值必須與原張量元一致，但同時由於反演操作會使極化張量中的每一個張量元發生符號反轉，但依據Neumann原理，張量元在經過對稱性操作後應保持不變。此處以$\chi^{(2)}_{111}$為例，帶入式(~\ref{eq:Neumann principle transformation})，可得
+\begin{equation}
+\chi^{(2)'}_{111}=a_{11}a_{11}a_{11}\chi^{(2)}_{111}=-\chi^{(2)}_{111}
+\label{eq:chi_example}
+\end{equation}
+然而，根據Neumann原理$\chi^{(2)'}_{111}=\chi^{(2)}_{111}$，綜合式(~\ref{eq:chi_example})可知
+\begin{equation}
+    \chi^{(2)}_{111}=-\chi^{(2)}_{111} \Rightarrow \chi^{(2)}_{111}=0
+\end{equation}
+由此可知，當晶體具有中心對稱性時，其二階極化率張量中所有的分量皆必須為零。因此無法產生二次諧波產生效應。這也近一步說明，SHG效應僅可能發生於缺乏中心對稱性的晶體結構中。
+
+本文以氮化鎵(GaN)為主要模擬材料，其常見的結構為纖鋅礦結構，屬於六方晶系並且不具有中心對稱性的$C_{6v}$點群。
+而$C_{6v}$點群的對稱性操作總共有十二種，$C_{6v}=\{\hat{E}, \hat{C}_{6}, \hat{C}_{6}^{-1},\hat{C}_{3}, \hat{C}_{3}^{-1}, \hat{C}_2, \hat{\sigma}_{d1}, \hat{\sigma}_{d2}, \hat{\sigma}_{d3}, \hat{\sigma}_{v1}, \hat{\sigma}_{v2}, \hat{\sigma}_{v3}\}$\cite{bradley2009mathematical}，表~\ref{tab:對稱操作說明}為各個對稱性操作的說明\cite{newnham2004properties}\cite{bradley2009mathematical}。
+並透過表~\ref{tab:對稱操作矩陣}中的對稱性操作的矩陣形式，對二階極化張量$\chi^{(2)}$進行這些對稱性轉換，即可推導出符合該點群對稱性限制的非零張量元分布，作為模擬結果的理論依據。
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|>{\centering\arraybackslash}m{6cm}|>{\centering\arraybackslash}m{10cm}|}
+\hline
+\textbf{對稱操作} & \textbf{說明} \\
+\hline
+恆等操作 $\hat{E}$ & 不做任何行為或是旋轉360° \\
+\hline
+（逆）旋轉操作 $\hat{C}_6$、$\hat{C}_3$、$\hat{C}_2$ ($\hat{C}_6^{-1}$、$\hat{C}_3^{-1}$) & 繞主軸z軸旋轉60°、120°、180°（-60°、-120°） \\
+\hline
+垂直鏡射操作 $\hat{\sigma}_v(\theta)$ & 對與主軸z軸平行的垂直鏡面($\theta=30^\circ,150^\circ,270^\circ$)鏡射 \\
+\hline
+等分鏡射操作 $\hat{\sigma}_d(\theta)$ & 對通過主軸並平分兩個副軸夾角的鏡面($\theta=0^\circ,120^\circ,240^\circ$)鏡射 \\
+\hline
+\end{tabular}
+\caption{C$_{6v}$ 點群對稱操作\cite{bradley2009mathematical}}
+\label{tab:對稱操作說明}
+\end{table}
+
+%%旋轉示意圖
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\multicolumn{3}{|c|}{\textbf{對稱操作的矩陣形式[$a_{ij}$]}} \\
+\hline
+$\hat{E}$ &
+$\hat{C}_6$ &
+$\hat{C}_6^{-1}$ \\
+\hline
+$\begin{pmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{pmatrix}$ &
+$\begin{pmatrix}
+\frac{1}{2} & -\frac{\sqrt{3}}{2} & 0 \\
+\frac{\sqrt{3}}{2} & \frac{1}{2} & 0 \\
+0 & 0 & 1
+\end{pmatrix}$ &
+$\begin{pmatrix}
+\frac{1}{2} & \frac{\sqrt{3}}{2} & 0 \\
+-\frac{\sqrt{3}}{2} & \frac{1}{2} & 0 \\
+0 & 0 & 1
+\end{pmatrix}$ \\
+\hline
+$\hat{C}_3$ &
+$\hat{C}_3^{-1}$ &
+$\hat{C}_2$ \\
+\hline
+$\begin{pmatrix}
+-\frac{1}{2} & -\frac{\sqrt{3}}{2} & 0 \\
+\frac{\sqrt{3}}{2} & -\frac{1}{2} & 0 \\
+0 & 0 & 1
+\end{pmatrix}$ &
+$\begin{pmatrix}
+-\frac{1}{2}  & \frac{\sqrt{3}}{2} & 0 \\
+-\frac{\sqrt{3}}{2} & -\frac{1}{2} & 0 \\
+0 & 0 & 1
+\end{pmatrix}$ &
+$\begin{pmatrix}
+-1 & 0 & 0 \\
+0 & -1 & 0 \\
+0 & 0 & 1
+\end{pmatrix}$ \\
+\hline
+$\hat{\sigma}_{v1}(30^\circ)$ &
+$\hat{\sigma}_{v2}(150^\circ)$ &
+$\hat{\sigma}_{v3}(270^\circ)$ \\
+\hline
+$\begin{pmatrix}
+\frac{1}{2} & \frac{\sqrt{3}}{2} & 0 \\
+\frac{\sqrt{3}}{2} & -\frac{1}{2} & 0 \\
+0 & 0 & 1
+\end{pmatrix}$ &
+$\begin{pmatrix}
+\frac{1}{2} & -\frac{\sqrt{3}}{2} & 0 \\
+-\frac{\sqrt{3}}{2} & -\frac{1}{2} & 0 \\
+0 & 0 & 1
+\end{pmatrix}$ &
+$\begin{pmatrix}
+-1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{pmatrix}$ \\
+\hline
+$\hat{\sigma}_{d1}(0^\circ)$ &
+$\hat{\sigma}_{d2}(120^\circ)$ &
+$\hat{\sigma}_{d3}(240^\circ)$ \\
+\hline
+$\begin{pmatrix}
+1 & 0 & 0 \\
+0 & -1 & 0 \\
+0 & 0 & 1
+\end{pmatrix}$ &
+$\begin{pmatrix}
+-\frac{1}{2} & -\frac{\sqrt{3}}{2} & 0 \\
+-\frac{\sqrt{3}}{2} & \frac{1}{2} & 0 \\
+0 & 0 & 1
+\end{pmatrix}$ &
+$\begin{pmatrix}
+-\frac{1}{2} & \frac{\sqrt{3}}{2} & 0 \\
+\frac{\sqrt{3}}{2} & \frac{1}{2} & 0 \\
+0 & 0 & 1
+\end{pmatrix}$ \\
+\hline
+\end{tabular}
+\caption{C$_{6v}$ 點群對稱操作\cite{koster1963properties}}
+\label{tab:對稱操作矩陣}
+\end{table}
+
+
+
+%-------------------------------------------------
+
+%2-2
+\section{材料結構與缺陷類型}
+氮化鎵(GaN)是一種III-V族化合物半導體，具有寬能隙、高熱穩定性、高崩潰電壓等特性，廣泛應用於高功率電子元件與光電元件如LED、LD、HEMT等。%%cite
+GaN晶體在不同的成長條件下，可能形成兩種主要的晶體結構:六方的纖鋅礦(wurtzite)結構與立方的閃鋅礦(zinc blende)結構。
+因六方最密堆積結構會因為不同的堆疊周期而形成不同的結構，而如何定義閃鋅礦與纖鋅礦結構，按照每一層原子的堆疊位置所定義。按照圖(~\ref{fig:hcp_SF})中所標示的A、B、C的位置，若第一層定義為A，第二層原子堆疊的位置為B，而最大的差別便是第三層，若第三層原子堆疊在C位置，那麼此結構的堆疊週期將會是ABCABC週期，這樣子的結構稱為閃鋅礦結構；而若是第三層原子堆疊在A位置，則期週期為ABABAB，便會形成纖鋅礦結構\cite{kittel2018introduction}。如圖~\ref{fig:structure.png}，$(c)$和$(d)$中大寫的A、B和C代表鎵原子(Ga)，小寫的a、b和c代表氮原子(N)，因此閃鋅礦結構的堆疊續列為AaBbCcAaBbCc，而纖鋅礦的堆疊續列為AaBbAaBb。為了簡化，將GaN分子視為一個堆疊的單元，將小寫字母省略，因此兩種結構的堆疊序列可分別表示為ABCABC、ABABAB，用大寫字母代表Ga-N原子雙層。
+其中，六方的纖鋅礦結構為較常見且穩定的結構，屬於$P6_3mc$空間群，不具有中心對稱性(Centrosymmetry)，具備能產生SHG效應的條件。其晶格常數為$a = 3.189 \, \text{Å} , \, c = 5.185 \, \text{Å}$。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\linewidth]{hcp_structure.png}
+    \caption{六方最密堆積(Hexagonal closed packed)結構的堆疊位置。~\cite{kittel2018introduction}}
+    \label{fig:hcp_SF}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{GaN_結構.png}
+    \caption{氮化鎵結構圖，綠色代表Ga原子，灰色代表N原子。(a)、(b)為GaN的閃鋅礦結構與其沿著[111]方向的堆疊序列。(c)、(d)為纖鋅礦結構與其沿著c軸[0001]的堆疊序列。\cite{frentrup2017x}}
+    \label{fig:structure.png}
+\end{figure}
+
+% 纖鋅礦結構的GaN缺乏中心對稱性，因而能展現非線性光學的特性。本研究選取此結構的GaN，分析其晶體缺陷與應變對SHG訊號的影響與變化。
+
+\subsection{晶體中的缺陷}
+
+化合物半導體的晶體在生長與製程過程中，難以完全避免缺陷的產生。這些缺陷根據其幾何型態與空間分布特性，可大致分類為三種類型：點缺陷 (Point Defects)、線缺陷(Line Defects)以及面缺陷(Planar Defects)。不同類型的缺陷對材料的物理性質與元件性能皆會有影響，理解這些缺陷的性質與形成機制，對於材料品質控制與元件可靠性評估具有關鍵意義\cite{hull2011introduction}
+
+\subsubsection{點缺陷(Point Defects)}
+點缺陷為最基本的缺陷類型，通常會發生於單一晶格上，包含空缺(Vacancy):原子的缺失；間隙原子(Interstitial):額外原子進入晶格間隙的位置；置換原子(Substitutional Defect):由不同的種類的原子佔據晶格原本位置；以及反位原子(Antisite Defect):晶格中的兩種不同原子互換位置，常見於化合物半導體材料中\cite{raja2020rice}。這些點缺陷會局部地改變材料中的電荷分布以及晶體的對稱性，進而影響材料的載子濃度、遷移率以及光學性質。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\linewidth]{point_defect_figure.png}
+    \caption{晶格中的點缺陷示意圖\cite{raja2020rice}}
+    \label{fig:enter-label}
+\end{figure}
+
+
+\subsubsection{線缺陷-差排(Dislocation)}
+差排(Dislocation)是一種常見的沿著一維方向延伸的晶體缺陷。
+在理想無缺陷的晶體中，沿任一封閉路徑(伯格斯路徑，Burgers circuit)回到起點位置。但當差排存在時，該路徑會因晶格錯位而無法閉合，而將此迴路閉合而額外加上的向量稱為伯格斯向量(Burgers vector)，用來描述差排的大小以及方向。
+差排主要分為兩種，一種為螺旋差排(Screw Dislocation)，一種為刃狀差排(Edge Dislocation)。
+螺旋形差排的差排線(Dislocation Line)與伯格斯向量平行(圖~\ref{fig:screw_dislocation_figure})，原子排列會在空間中呈現螺旋型的分布。沿著伯格斯路徑繞一圈時，晶體會沿著差排線方向前進一個晶格間距，就像螺絲旋轉推進一樣~\cite{hull2011introduction}；刃型差排是最常見的差排類型之一，其形成是在晶體中額外插入了一排原子，這一排原子造成了局部晶格的擠壓，使得晶體上半部分的原子距離縮短，產生壓應力(Compressive stress)，而在下方的原子間距被拉大，產生拉應力(Tensile stress)，如圖~\ref{fig:dislocation_figure}。在刃狀差排中，差排線會與伯格向量相互垂直。
+
+% 如果前述的迴路中含有一排和迴路平面垂直的錯位原子時，則路徑的終點和起點不同，如圖，必須再加上一個原子位移才能回到起點。此種錯位的原子稱為刃狀差排(Edge Dislocation)，因為這多出的一排原子，就像一個薄刀刃鑲嵌在晶格中，而連接迴路終點和起點的向量定義為伯格向量(Burger's vector)。刃狀差排的差排線(Dislocation Line)和伯格向量垂直。圖中的差排線是晶體中已位移區域與未位移區域的分界線，和連接迴路終點和起點的伯格向量平行，此種差排稱為螺旋差排(Screw Dislocation)，因為沿迴路走一圈，前進一晶格，好像轉動螺絲一般。
+% 刃狀差排中，多出來的一排原子對鄰近的原子會產生推擠，原子間形成壓應力(Compressive)的應力場。而在此排原子正下方的鄰近原子，因為原子間距被擴大，所以原子彼此產生拉應力(Tensile)，以期回到原來的位置。這兩種應力場都和伯格向量大致平行，同時也和差排線平行，如圖。
+% 圖中的R表示應力方向。這些應力場使差排鄰近的晶格產生局部扭曲，改變晶格面和入射電子束的夾角，繞射條件也因此隨著改變，使其TEM影像產生明暗變化，因此在TEM影像中得到差排線的存在。這種因繞射條件改變而產生影像明暗度變化的機構稱為繞射對比。在TEM觀察中，傾轉試片會使差排鄰近變形的晶格面，和附近未變形的晶格面的繞射條件同時改變。在某些角度下，兩者的繞射條件差異不大，此時差排和鄰近基材的明暗度相同，而無法區別，在影響上相當於消失不見，這是TEM分析差排的重要繞射條件。
+%---------------------------------------
+% 線缺陷主要是指位錯(Dislocation)，沿一維方向延伸的晶格錯位。位錯的行程形成供常會與晶體的成長過程中的熱應力或機械形變有關，主要有兩種類型:刃型錯位( Edge Dislocation, ED)，主要是指在原來的晶格結構中，額外插入或移除晶格中的原子，使得晶體在位錯線(Dislocation Line)的一側發生壓縮，另一側發生拉伸的現象；另一種為螺旋錯位(Screw Dislocation, SD)是指晶格沿著位錯線產生螺旋的錯位。這些位錯會在材料中行程能接陷阱，會導致載子的複合加劇，從而使元件的效能下降。\cite{hull2011introduction}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{dislocation.png}
+    \caption{(a)為在剪應力的作用下刃狀差排(Edge Dislocation)的運動過程；(b)刃狀差排示意圖；(c)為刃型差排的應力分布示意圖，其中綠色區域為壓應力，黃色區域為拉應力。~\cite{callister2020materials}}
+    \label{fig:dislocation_figure}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{screw_dislocation_figure.png}
+    \caption{螺旋差排的示意圖。~\cite{hull2011introduction,callister2020materials}}
+    \label{fig:screw_dislocation_figure}
+\end{figure}
+
+針對刃狀差排在晶體中造成的位移場，在等向性材料與平面應變(plane strain)的條件下，可以表示為\cite{hull2011introduction,zhao2008experimental,anderson2017theory}
+\begin{equation}
+    u_x=\frac{b}{2\pi}\left[\arctan(\frac{y}{x})+\frac{xy}{2(1-\nu)(x^2+y^2)}\right]   
+\end{equation}
+\label{eq:ux}
+\begin{equation}
+    u_y =-\frac{b}{2\pi}\left[\frac{1-2\nu}{4(1-\nu)}\ln{(x^2+y^2)}+\frac{x^2-y^2}{4(1-\nu)(x^2+y^2)}\right]
+\label{eq:uy}
+%cite Theory of Dislocation
+\end{equation}
+其中$u_x$、$u_y$為分別在$x$、$y$方向的位移場，$b$為伯格斯向量(Burgers vector)，$\nu$為材料的蒲松比(Poisson's ratio)。
+將上述位移場式(~\ref{eq:ux})與式(~\ref{eq:uy})對空間座標進行一次偏微分以求得應變，並結合彈性理論的應變應力關係，可導出以下經典的刃型差排的應力場分布公式~\cite{hull2011introduction}:
+\begin{align}
+    & \sigma_{xx}=-\frac{Gb}{2\pi(1-\nu)}\frac{y(3x^2+y^2)}{(x^2+y^2)^2} \notag \\ 
+    & \sigma_{yy}=\frac{Gb}{2\pi(1-\nu)}\frac{y(x^2-y^2)}{(x^2+y^2)^2} \notag \\ 
+    & \sigma_{xy}=\sigma_{yx}=\frac{Gb}{2\pi(1-\nu)}\frac{x(x^2-y^2)}{(x^2+y^2)^2} \notag \\ 
+    & \sigma_{zz}=\nu (\sigma_{xx}+\sigma_{yy}) \notag \\
+    & \sigma_{xz}=\sigma_{zx}=\sigma_{yz}=\sigma_{zy}=0 
+\label{eq:edge_stress}
+\end{align}
+其中$G$為剪切模量(Shear modulus)。在氮化鎵(GaN)晶體中，常見的刃型差排的柏格斯向量為$\vec{b}=\frac{1}{3}[11\overline{2}0]$，晶格常數為$a=3.189 \, \text{Å}$，以及剪切模量$G=110$GPa。帶入式(~\ref{eq:edge_stress})即可計算出刃型差排的應力分布。
+
+% 另一種常見的差排類型為螺旋差排(Screw Dislocation)。此種差排的差排線與伯格向量平行，原子排列會在空間中呈現螺旋型的分布。沿著伯格路徑(Burgers circuit)繞一圈時，經體會沿著差排線方向前進一個經隔間距，就像螺絲旋轉推進一樣~\cite{hull2011introduction}。
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.8\linewidth]{screw_dislocation_figure.png}
+%     \caption{螺旋型差排的示意圖。~\cite{hull2011introduction}~\cite{callister2020materials}}
+%     \label{fig:screw_dislocation_figure}
+% \end{figure}
+
+\subsubsection{面缺陷}
+
+面缺陷為晶格在特定平面上的結構不連續，常見的形式包括堆疊錯誤(Stacking Faults)(如圖~\ref{fig:HRTEM_SF})多發生於層狀堆疊結構中，因堆疊順序錯誤而產生。晶界(Grain Boundaries)則存在於多晶材料中，不同晶粒間的晶格方向不一致，造成的介面結構不連續。
+堆疊錯誤會發生在層狀堆疊的結構中，當晶格的排列順序出現錯誤時，便形成堆疊錯誤；晶界則會存在多晶的材料當中，因不同的晶粒，其晶格方向不一致，使界面處會產生結構不連續的現象。面缺陷可能會影響材料的機械強度與熱穩定性。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{HRTEM_stacking fault.png}
+    \caption{HRTEM所看到堆疊層錯的結構圖。此圖是在GaN的[$[11\overline{2}0]$晶向上的晶體結構，其發生堆疊錯誤的方向是在c軸[0001]方向。\cite{PhysRevB.71.235334}}
+    \label{fig:HRTEM_SF}
+\end{figure}
+
+堆疊錯誤(Stacking Fault)，在纖鋅礦(Wurtzite)結構的GaN中的堆疊錯誤是指在[0001]方向上的堆疊序列發生錯誤，使得原本應為ABABAB的堆疊順序，局部轉變為包含閃鋅礦(Zinc blende)結構的堆疊順序，從而在基面(Basal plane $(0001)$面)上形成基面堆疊錯誤(Basal Stacking Fault, BSF)。根據堆疊序列與形成原因的不同，可以將堆疊錯誤分為三種類型:$I_1$型、$I_2$型以及$I_3$型，如圖~\ref{fig:HRTEM_SF}與圖~\ref{fig:SF_atomic_structure}所示。
+其中$I_1$型堆疊錯誤的堆疊順序可表示為ABABABCBCBC，包含一段ABC堆疊區域。形成原因是被移除或插入了一層基面原子後，缺陷上方或下方的的晶體沿著$\frac{1}{3}[1\overline{1}00]$或$\frac{1}{3}[\overline{1}100]$的方向滑移，其伯格斯向量為$\mathbf{b}=\frac{1}{6}[2\overline{2}03]$或$\mathbf{b}=\frac{1}{6}[\overline{2}20\overline{3}]$；$I_2$型的堆疊序列為ABABABCACA，對應於Shockley部分差排(Shockley Partial Dislocation)，由完美晶體沿著$\frac{1}{3}[1\overline{1}00]$方向滑移形成，伯格斯向量$\mathbf{b}=\frac{1}{3}[1\overline{1}00]$；$I_3$型則為ABABCBABAB的堆疊順序，此中堆疊錯誤可以視為在原本應為A或是B堆疊的位置被錯誤地替換為C，造成堆疊順序的改變，形成一種較少見的堆疊錯誤類型\cite{PhysRevB.71.235334,liliental2014structural,komninou2005partial,batyrev2011dislocations}。這些堆疊錯誤破壞了晶體原有的結構對稱性，進而對材料的電子結構與光學性質產生顯著影響。
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\linewidth]{SF.png}
+    \caption{堆疊層錯的原子結構。圖(a)中a為$I_1$型，b為$I_2$型，c為$I_3$型堆疊錯誤。圖(b)高解析度TEM顯示的$I_1$型堆疊錯誤的影像，其寬度約為3奈米。圖(c)為TEM影像，箭頭所指的區域為基面堆疊錯誤缺陷與點缺陷的區域。\cite{batyrev2011dislocations}}
+    \label{fig:SF_atomic_structure}
+\end{figure}
+
+%-----------------------------------------------------------------------------
+%2-3
+\section{晶體中的應力（Stress）與應變（Strain）}
+在晶體中，缺陷如刃狀差排會造成局部晶格的扭曲與變形，進而產生非均勻的應力場。這些應力分布可透過連續介質力學中的應力張量來描述，並進一步轉換為應變張量，以模擬晶體結構的形變行為。
+應力是指單位面積上所承受的力，其在三維空間中可以表示為：
+\begin{equation}
+    \boldsymbol{\sigma} =
+    \begin{pmatrix}
+        \sigma_{xx} & \sigma_{xy} & \sigma_{xz} \\
+        \sigma_{yx} & \sigma_{yy} & \sigma_{yz} \\
+        \sigma_{zx} & \sigma_{zy} & \sigma_{zz}
+    \end{pmatrix}
+\end{equation}
+其中 $\sigma_{xx}$、$\sigma_{yy}$、$\sigma_{zz}$ 為正向應力（normal stress），其方向垂直於作用面；其餘分量 $\sigma_{xy}$、$\sigma_{yx}$、$\sigma_{xz}$、$\sigma_{zx}$、$\sigma_{yz}$、$\sigma_{zy}$ 則為剪應力（shear stress），方向平行於作用面。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{stress_figure.pdf}
+    \caption{微小體積元素上的應力分量示意圖\cite{boresi2002advanced}。圖中顯示沿笛卡爾座標軸排列的矩形元素，標示其各面上的正應力（$\sigma_{xx}$、$\sigma_{yy}$、$\sigma_{zz}$）與剪應力（$\sigma_{xy}$、$\sigma_{yx}$、$\sigma_{xz}$、$\sigma_{zx}$、$\sigma_{yz}$、$\sigma_{zy}$），用以描述材料內部某一點的應力狀態。}
+    \label{fig:stress_tensor}
+\end{figure}
+
+在本研究中，我們首先計算出刃狀差排所造成的應力分布，並透過材料的彈性常數矩陣（$C_{ij}$）將其轉換為應變張量後，便能以應變場形式作用於晶格，以利後續電子結構與光學性質的模擬。
+對於六方晶系(wurtzite 結構)，其應力–應變關係可簡化為：
+\begin{equation}
+    \begin{pmatrix}
+        \sigma_{xx} \\ \sigma_{yy} \\ \sigma_{zz} \\ \sigma_{yz} \\ \sigma_{xz} \\ \sigma_{xy}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        C_{11} & C_{12} & C_{13} & 0 & 0 & 0 \\
+        C_{12} & C_{11} & C_{13} & 0 & 0 & 0 \\
+        C_{13} & C_{13} & C_{33} & 0 & 0 & 0 \\
+        0 & 0 & 0 & C_{44} & 0 & 0 \\
+        0 & 0 & 0 & 0 & C_{44} & 0 \\
+        0 & 0 & 0 & 0 & 0 & C_{66}
+    \end{pmatrix}
+    \begin{pmatrix}
+        \varepsilon_{xx} \\ \varepsilon_{yy} \\ \varepsilon_{zz} \\ 2\varepsilon_{yz} \\ 2\varepsilon_{xz} \\ 2\varepsilon_{xy}
+    \end{pmatrix}
+    \label{eq:stress_strain_relation}
+\end{equation}
+其中 $\boldsymbol{\sigma}$ 為應力張量分量，$\boldsymbol{\varepsilon}$ 為應變張量分量，$C_{ij}$ 為材料的彈性常數。若已知應力分量，則可透過彈性常數矩陣的反矩陣求得對應的應變分量。
+
+\subsection{應變張量(Strain tensor)}
+應變是描述材料形變的幾何量，定義為：
+\begin{equation}
+    \varepsilon_{ij} = \frac{\partial u_i}{\partial x_j}
+\end{equation}
+其中 $u_i$ 為位移分量，$x_j$ 為座標方向。將上式積分後可得位移場：
+\begin{equation}
+    u_i = \sum_j \varepsilon_{ij} x_j + \text{const.}
+    \label{eq:displacement_general}
+\end{equation}
+在此我們排除材料旋轉效應，並假設應變張量為對稱形式（$\varepsilon_{ij} = \varepsilon_{ji}$），且質心不發生平移（$u_i(\mathbf{R}_0) = 0$），則位移場可簡化為：
+\begin{equation}
+    u_i = \sum_j \varepsilon_{ij} x_j
+    \label{eq:displacement_simplified}
+\end{equation}
+三維應變張量可表示為：
+\begin{equation}
+    \boldsymbol{\varepsilon} =
+    \begin{pmatrix}
+        \varepsilon_{xx} & \varepsilon_{xy} & \varepsilon_{xz} \\
+        \varepsilon_{yx} & \varepsilon_{yy} & \varepsilon_{yz} \\
+        \varepsilon_{zx} & \varepsilon_{zy} & \varepsilon_{zz}
+    \end{pmatrix}
+    \label{eq:strain_tensor}
+\end{equation}
+若僅沿某一晶軸（如 $z$ 軸）施加應力，則可視為單軸應變，其應變張量簡化為：
+\begin{equation}
+    \boldsymbol{\varepsilon} =
+    \begin{pmatrix}
+        0 & 0 & 0 \\
+        0 & 0 & 0 \\
+        0 & 0 & \varepsilon_{zz}
+    \end{pmatrix}
+\end{equation}
+其中 $\varepsilon_{zz} > 0$ 表示拉伸，$\varepsilon_{zz} < 0$ 表示壓縮 \cite{boresi2002advanced}。單軸應變會破壞晶體原始的對稱性，改變晶格常數，進而影響其電子結構與光學性質。在模擬二次諧波產生（SHG）效應時，單軸應變會改變非線性光學張量的值與非零分量分布。因此，考量缺陷所引起的局部應變對晶體結構與對稱性的影響，有助於理解其對 SHG 效應的調控機制。
+
+%------------------------------------------------------------
+%2-4
+\section{二次諧波產生效應強度分析}
+由式(~\ref{eq:chi_tensor})可知，影響SHG極化向量的不僅是材料本身的極化率張量，入射光的電場方向與強度也會影響極化向量$\mathbf{P}$的大小與方向。因此，我們可以針對不同入射光的偏振方向進行分析。為了描述入射光的行進方向，我們使用球座標中的極角(polar angle, $\theta$)與方位角(azimuthal angle, $\phi$)來表示其單位波向量$\hat{\mathbf{q}}$(如圖~\ref{fig:座標2})，定義如下:
+\begin{equation}
+    \hat{\mathbf{q}}(\theta, \phi)=\sin{\theta}(\cos{\phi}\hat{x}+\sin{\phi}\hat{y})+\cos{\theta}\hat{z}
+\end{equation}
+$\hat{\mathbf{q}}$ 為入射光的單位波向量，表示光在三維空間中的傳播方向，其中$\theta$為從z軸起算的夾角(及偏離垂直方向的角度)，$\phi$為在$xy$平面上從$x$軸起算的方位角。由此，我們可以定義在與入射光垂直的平面上的兩個相互正交的偏振基底向量，分別為$S$偏振與$P$偏振，以$\hat{\boldsymbol{\varepsilon}}_S$、$\hat{\boldsymbol{\varepsilon}}_P$表示。$S$偏振向量定義為垂直入射面(由$z$軸與$\hat{\mathbf{q}}$所張成的平面)的單位向量，其表達式為:
+\begin{equation}
+    \hat{\boldsymbol{\varepsilon}}_S(\theta, \phi)=\frac{\hat{\mathbf{z}}\times\hat{\mathbf{q}}(\theta, \phi)}{\Big| \hat{\hat{\mathbf{z}\times \mathbf{q}}}(\theta, \phi)\Big|}=(-\sin{\phi},\cos{\phi},0)
+\end{equation}
+$\mathbf{P}$偏振定義為與$\mathbf{S}$偏振垂直，且與入射方向垂直的向量，即
+\begin{equation}    \hat{\boldsymbol{\varepsilon}}_P(\theta, \phi)=\hat{\boldsymbol{\varepsilon_S}}(\theta, \phi)\times\hat{\mathbf{q}}(\theta, \phi)=(\cos{\theta}\cos{\phi},\cos{\theta}\sin{\phi},\cos{\theta})
+\end{equation}
+我們可以利用這兩個相互正交的偏振基底向量描述各種入射偏振條件，並可以進一步計算對應的二階極化向量與分析SHG強度。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{座標圖2.png}
+    \caption{光的行進方向與偏振向量在空間中的示意圖。}
+    \label{fig:座標2}
+\end{figure}
+
+\subsection{費米黃金定則(Fermi's Golden Rule)計算SHG強度}
+在二次諧波產生過程中，材料受到入射光場的微擾後，會產生頻率加倍的躍遷。此現象可以透過費米黃金定則來描述其躍遷的機率(Transition rate)。將光場微擾的哈密頓量(Hamiltonian)表示為
+\begin{equation}
+    H^*=\frac{e}{2m_0}\mathbf{A}_{0,\mathbf{q},\lambda}^*\cdot\mathbf{p}
+\end{equation}
+帶入費米黃金定則公式，其中$\mathbf{A}^*_{0,\mathbf{q},\lambda}$為入射光的向量勢，動量算符定義為$\mathbf{p}=\frac{im_0}{\hslash}[H_0, \mathbf{r}]$。未受擾動的哈密頓量$H_0$滿足$H_0 |i\rangle=\epsilon_i|i\rangle,H_0|f\rangle=\epsilon_f|f\rangle$，其中$\epsilon_i$與$\epsilon_f$分別為系統之初態與末態的能量。躍遷機率公式可以寫為
+\begin{equation}
+    \Gamma_{\lambda,\mathbf{q}}=\frac{-2\pi e^2(\epsilon_f-\epsilon_i)^2 A_0^2}{\hslash^3}\Big| \langle i|\hat{\boldsymbol{\varepsilon}}_{\mathbf{q},\lambda}^*\cdot\mathbf{r}|{f}\rangle \Big|^2\delta(\epsilon_i-\epsilon_f-\hslash\omega)
+\end{equation}
+另一方面，材料在光場的作用下，產生的極化期望值與偶極矩有關，可以表示為
+$\langle\mathbf{P}\rangle=\frac{qN}{V}\langle{i} \vert\mathbf{r}\vert{f}\rangle \propto \Big(P_x(2\omega)\hat{x}+P_y(2\omega)\hat{y}+P_z(2\omega)\hat{z}\Big)$
+其中$\mathbf{P}=P_x(2\omega)\hat{x}+P_y(2\omega)\hat{y}+P_z(2\omega)\hat{z}$為SHG的極化向量，因此可以將躍遷機率公式改寫為
+\begin{align}    
+    & \Gamma_{\lambda,\mathbf{q}}\propto \frac{-2\pi e^2(-\hslash\omega_0)^2A_0^2}{\hslash^3}\Big| \hat{\boldsymbol{\varepsilon}}_{\mathbf{q},\lambda}^*\cdot \Big(P_x(2\omega)\hat{x}+P_y(2\omega)\hat{y}+P_z(2\omega)\hat{z}\Big) \Big|^2\delta(\hslash\omega_0-\hslash\omega) \\
+    & \rightarrow\quad I_{\lambda,\mathbf{q}}\propto\Big| \hat{\boldsymbol{\varepsilon}}_{\mathbf{q},\lambda}^*\cdot \mathbf{P} \Big|^2
+\end{align}
+其中，$\Gamma$為躍遷機率，$\mathbf{q}$為出射光的波向量，$\hat{\boldsymbol{\varepsilon}}_{\mathbf{q},\lambda}^*$為出射光的偏振方向的單位向量，$I_{\lambda, \mathbf{q}}$為對應的SHG強度。通過此公式的推導，我們可以利用費米黃金定則計算SHG過程中的躍遷機率，並進一步了解材料在入射光場的微擾下產生的SHG訊號強度。
+
+
+\subsection{不同偏振與SHG強度關係}
+可以藉由二階極化向量與SHG強度計算公式，分析在不同的入射方向與偏振條件，計算對應的的極化向量$\mathbf{P}^{(2)}$，再投影至觀察方向上的偏振向量，分析SHG強度的變化。
+
+在了解了二階極化向量 $\mathbf{P}{(2\omega)}$ 的產生機制後，我們可進一步探討實際可觀測的 SHG 強度。由於 SHG 訊號的強度取決於 $\mathbf{P}{(2\omega)}$ 在觀察方向偏振分量上的投影大小，因此，對任一入射與出射偏振組合，其 SHG 強度可表示為：
+
+\begin{equation}
+I_{\lambda \lambda'} \propto \left| \hat{\boldsymbol{\varepsilon}}_{\lambda'} \cdot \mathbf{P}_{\lambda}(2\omega) \right|^2
+\label{eq:Intensity_polarization}
+\end{equation}
+其中，$\hat{\boldsymbol{\varepsilon}}_{\lambda^{'}}$表示我們在探測時選擇要測量的偏振方向，就是探測器所接收的光在某個特定方向上的偏振分量。$\mathbf{P}{(2\omega)}$ 為由入射偏振產生的非線性極化向量。根據入射與出射偏振方向的不同組合，SHG 強度可區分為以下四種：
+
+PP 組合：入射與出射光皆為 P 偏振
+ $ I_{PP} \propto \left| \hat{\boldsymbol{\varepsilon}}_P(\theta, \phi) \cdot \mathbf{P}_{P}(2\omega) \right|^2 $
+ 
+PS 組合：入射光為 P 偏振，出射光為 S 偏振
+ $ I_{PS} \propto \left| \hat{\boldsymbol{\varepsilon}}_P (\theta, \phi) \cdot \mathbf{P}_{S}(2\omega) \right|^2 $
+
+SP 組合：入射光為 S 偏振，出射光為 P 偏振
+ $ I_{SP} \propto \left| \hat{\boldsymbol{\varepsilon}}_S(\theta, \phi) \cdot \mathbf{P}_{P}(2\omega) \right|^2 $
+
+SS 組合：入射與出射光皆為 S 偏振
+ $ I_{SS} \propto \left| \hat{\boldsymbol{\varepsilon}}_S(\theta, \phi) \cdot \mathbf{P}_{S}(2\omega) \right|^2 $
+
+其中 $\mathbf{P}_{S}{(2\omega)}$ 與 $\mathbf{P}_{P}{(2\omega)}$ 分別為入射光為 S 或 P 偏振時所激發的二階極化向量。這些極化向量皆可由非線性極化率張量與對應入射電場分量計算而得。
+
+由於 $\hat{\boldsymbol{\varepsilon}}_S(\theta, \phi)$ 與 $\hat{\boldsymbol{\varepsilon}}_P(\theta, \phi)$ 均可依據入射光方向 $\hat{\mathbf{q}}(\theta, \phi)$ 明確定義，因此在特定入射角（$\theta, \phi$）下，可完整推導出各偏振組合的 SHG 強度隨角度變化的表現。這些理論推導提供後續模擬與實驗比對的依據，並有助於分析晶體對稱性、材料結構與缺陷等對 SHG 偏振響應的影響。
+
+%-------------------------------------------------
+%2-5
+\section{使用密度泛函理論(Density Functional Theroy, DFT)與Abinit軟體計算非線性極化率}
+
+在本研究中，我們使用基於密度泛函理論（Density Functional Theory, DFT）的 Abinit 軟體模擬材料的二階非線性光學響應(SHG)\cite{gonze2009abinit,gonze2020abinit,romero2020abinit}。DFT是描述多體電子系統基態性質的理論，其基本變數為電子密度 $n(\mathbf{r})$，由 Kohn-Sham 波函數 $\psi_{n\mathbf{k}}(\mathbf{r})$ 所建構：
+
+\begin{equation}
+n(\mathbf{r}) = \sum_{n\mathbf{k}}|\psi_{n\mathbf{k}}(\mathbf{r})|^2,
+\end{equation}
+
+Kohn-Sham 波函數需滿足以下方程式\cite{hohenberg1964,kohn1965self}：
+
+\begin{equation}
+\left[ -\frac{\hslash^2}{2m} \nabla^2 + V_{\text{eff}}(\mathbf{r}) \right] \psi_{n\mathbf{k}}(\mathbf{r}) = E_{n\mathbf{k}} \psi_{n\mathbf{k}}(\mathbf{r}),
+\end{equation}
+其中 $V_{\text{eff}}$ 為包含電子與電子間的庫倫作用力、電子與離子間的交互作用以及交換相關的位能。
+
+為進一步預測材料在SHG過程中的非線性光學響應，我們利用 Abinit 中的光學模組計算二階非線性極化率 $\chi^{(2)}$。該模組基於獨立粒子近似（independent particle approximation），並以速度算符形式處理光與物質的交互作用，結合從 DFT 計算所得的能帶結構與波函數資訊。材料在入射電場作用下的二階非線性極化響應可表示如下：
+\begin{equation}
+P_i^{(2)}(2\omega) = \epsilon_0 \sum_{jk} \chi^{(2)}_{ijk}(2\omega; \omega, \omega) \mathcal{E}_j(\omega) \mathcal{E}_k(\omega),
+\end{equation}
+
+在 Abinit 中，$\chi^{(2)}$ 的計算係基於 Kohn-Sham 波函數 $\psi_{n\mathbf{k}}$，藉由評估能帶間的耦合強度來獲得。這些耦合強度透過位置算符或速度算符的矩陣元素表示，反映電子在外加電場激發下的躍遷行為，並進一步決定材料的非線性光學性質\cite{sipe1993nonlinear, aversa1995nonlinear}
+具體而言，二階非線性極化率$\chi^{(2)}$可寫為布里淵區(Brillouin Zone)中的積分形式\cite{sipe1993nonlinear, aversa1995nonlinear, hughes1996calculation}:
+\begin{equation}
+\chi_{ijk}^{(2)}(-2\omega; \omega, \omega) = \frac{e^3}{\hslash^2} \sum_{nml} \int_{\text{BZ}} \frac{d\mathbf{k}}{4\pi^3} \frac{r_{nm}^i  {r_{ml}^j  r_{ln}^k}}{\omega_{ln} - \omega_{ml}} \left[ \frac{2f_{nm}}{\omega_{mn} - 2\omega} + \frac{f_{ml}}{\omega_{ml} - \omega} + \frac{f_{ln}}{\omega_{ln} - \omega} \right]
+\label{eq:chi2_wave}
+\end{equation}
+其中，$r_{nm}^i(\mathbf{k}) = \langle \psi_{n\mathbf{k}} | \hat{r}
+^i | \psi_{m\mathbf{k}} \rangle$ 為方向 $i$ 上的波函數耦合強度，即位置算符的矩陣元；$f_{nm} = f_n - f_m$ 為態 $n$ 與 $m$ 間的費米佔據數差，用以判斷躍遷是否允許；$\omega_{mn} = \omega_m - \omega_n$ 為能帶間能量差\cite{hughes1996calculation}。如圖\ref{fig:躍遷}所示，$n,m,l$表示不同的電子態，對應能量分別為$E_n,E_m,E_l$，其頻率可表示為$\omega_n=\frac{E_n}{\hslash},\omega_m=\frac{E_m}{\hslash},\omega_l=\frac{E_l}{\hslash}$。
+
+上述公式說明了材料的非線性極化響應是來自不同能代之間的量子躍遷與耦合，且其結果會與Kohn-Sham波函數的準確性以及布里淵區積分的數值精度高度相關。Abinit藉由考慮晶體對稱性與高效的數值積分\cite{gonze2009abinit,aversa1995nonlinear}，提升了$\chi^{(2)}$的計算效率與精確度。最終得到的$\chi^{(2)}$資料可用於模擬非線性光學實驗或缺陷效應分析的基礎。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\linewidth]{躍遷.png}
+    \caption{式(~\ref{eq:chi2_wave})中$n,m,l$示意圖，$n,m,l$表示為不同的電子態，對應的能量為$E_n,E_m,E_l$，其對應的頻率分別為$\omega_n=\frac{E_n}{\hslash},\omega_m=\frac{E_m}{\hslash},\omega_l=\frac{E_l}{\hslash}$。}
+    \label{fig:躍遷}
+\end{figure}
+
+

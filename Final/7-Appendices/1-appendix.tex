@@ -1,0 +1,538 @@
+%----------------------------------------------------------------------
+% 附錄頁
+%----------------------------------------------------------------------
+
+\begin{Appx}{Appendix}
+
+    \titlecontents{section}[0pt]{\addvspace{1.5pt}\filright\bf}%
+               {\contentspush{\quad\quad\quad\,\,\,\thecontentslabel\quad}}%
+               {}{\titlerule*[8pt]{.}\contentspage}
+               
+\setcounter{figure}{0}
+\renewcommand\thefigure{A.\arabic{figure}}
+
+\setcounter{table}{0}
+\renewcommand\thetable{A.\arabic{table}}
+
+\section{依據Neumann Principle的極化率張量簡化推導}
+\label{ch:appendix}
+根據Neumann principle，晶體的物理性質在晶體的對稱性操作下應不會改變。
+我們可以根據此定理推導出極化率張量$\chi_{ijk}^{(2)}$在晶體對稱性下的限制條件，進而簡化原本具有18個獨立分量的三階張量至僅有部分非零分量。% 將極化率張量中的18個分量化簡，得到其非零的分量。
+極化率張量在對稱性操作下的轉換可以寫為:
+\begin{equation}
+    \chi_{ijk}^{(2)'}=a_{il}a_{jm}a_{kn}\chi_{lmn}^{(2)}=\chi_{lmn}^{(2)}
+\label{eq:neumann}
+\end{equation}
+$a_{il},a_{jm},a_{kn}$表示為對稱性操作矩陣元。此式表示原極化率張量$\chi_{lmn}^{(2)}$再經由$a$對稱性操作矩陣轉換後應與轉換前相同$\chi_{ijk}^{(2)'}=\chi_{lmn}^{(2)}$，由此我們便可以推導出在該對稱性操作下，極化率張量元需滿足的限制條件，進而確定其對應的非零元的分布。
+
+在進行張量對稱性分析時，我們需先定義對稱性操作所對應的線性轉換矩陣\cite{koster1963properties}。
+假設$R$為某對稱操作所對應的線性轉換(linear transformation)，其在基底向量$\hat{e}_\mu$上的作用可以比表示為:
+\begin{equation}
+    R\hat{e}_\mu=\sum_\nu \hat{e}_\nu D_{\nu \mu}(R)
+\end{equation}
+其中，$\hat{e}_\mu$為作用前的基底向量，$\hat{e}_\nu$為作用後的展開基底，$D_{\nu\mu}$為線性轉換所對應的轉換矩陣元。解由此定義，我們便可以推導出不同對稱性操作所對應的矩陣表示，進而將其作用於極化率張量，以判斷在各種對稱性操作下張量元應滿足的限制條件，已確定不同點群所允許的非零張量元分布。
+以$\hat{C}_2$對稱操作為例，若定義其為在直角坐標系中以z軸為主軸逆時針旋轉$180^\circ$，則三個基底向量的轉換為:
+\begin{align}
+    & R\hat{e}_x=(-1)\hat{e}_x+(0)\hat{e}_y+(0)\hat{e}_z \\
+    & R\hat{e}_y=(0)\hat{e}_x+(-1)\hat{e}_y+(0)\hat{e}_z \\
+    & R\hat{e}_z=(0)\hat{e}_x+(0)\hat{e}_y+(1)\hat{e}_z
+\end{align}
+根據上述展開，可以得到線性轉換矩陣為:
+\begin{equation}
+    D_{\nu\mu}(\hat{C}_2)=\begin{pmatrix}
+        -1 & 0 & 0 \\
+        0 & -1 & 0 \\
+        0 & 0 & 1
+    \end{pmatrix}
+\label{eq:C2v}
+\end{equation}
+透過此方式便可以定義所有點群對稱性操作的轉換矩陣，並進行SHG二階極化率張量的對稱性分析。
+
+%% $C_{2v}=\{\hat{E}, \hat{C}_{2}, \hat{\sigma}_{x}, \hat{\sigma}_{y}\}$
+%% $C_{3v}=\{\hat{E}, \hat{C}_{3}, \hat{C}_{3}^{-1}, \hat{\sigma}_{d1}, \hat{\sigma}_{d2}, \hat{\sigma}_{d3}\}$
+
+\section{$C_{6v}$點群下的張量分析}
+以本研究中所使用的材料氮化鎵所屬的$C_{6v}$點群為例，$C_{6v}$點群中包含了十二種對稱性操作$C_{6v}=\{\hat{E}, \hat{C}_{6}, \hat{C}_{6}^{-1},\hat{C}_{3}, \hat{C}_{3}^{-1}, \hat{C}_2, \hat{\sigma}_{d1}, \hat{\sigma}_{d2}, \hat{\sigma}_{d3}, \hat{\sigma}_{v1}, \hat{\sigma}_{v2}, \hat{\sigma}_{v3}\}$\cite{bradley2009mathematical}。我們可以根據對稱性操作的定義如表~\ref{tab:對稱操作說明_2}，將此對稱性操作的矩陣形式寫下如表~\ref{tab:C_6對稱操作矩陣}。
+\begin{table}[H]
+\centering
+\begin{tabular}{|>{\centering\arraybackslash}m{6cm}|>{\centering\arraybackslash}m{10cm}|}
+\hline
+\textbf{對稱操作} & \textbf{說明} \\
+\hline
+恆等操作 $\hat{E}$ & 不做任何行為或是旋轉360° \\
+\hline
+（逆）旋轉操作 $\hat{C}_6$、$\hat{C}_3$、$\hat{C}_2$ ($\hat{C}_6^{-1}$、$\hat{C}_3^{-1}$) & 繞主軸z軸旋轉60°、120°、180°（-60°、-120°） \\
+\hline
+垂直鏡射操作 $\hat{\sigma}_v(\theta)$ & 對與主軸z軸平行的垂直鏡面($\theta=30^\circ,150^\circ,270^\circ$)鏡射 \\
+\hline
+等分鏡射操作 $\hat{\sigma}_d(\theta)$ & 對通過主軸並平分兩個副軸夾角的鏡面($\theta=0^\circ,120^\circ,240^\circ$)鏡射 \\
+\hline
+垂直鏡射操作 $\hat{\sigma_x}$、$\hat{\sigma_y}$ & 對與主軸z軸平行的垂直鏡面鏡射，xz平面與yz平面 \\
+\hline
+\end{tabular}
+\caption{對稱操作\cite{bradley2009mathematical}}
+\label{tab:對稱操作說明_2}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\multicolumn{3}{|c|}{\textbf{對稱操作的矩陣形式}} \\
+\hline
+$\hat{E}$ &
+$\hat{C}_6$ &
+$\hat{C}_6^{-1}$ \\
+\hline
+$\begin{pmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{pmatrix}$ &
+$\begin{pmatrix}
+\frac{1}{2} & -\frac{\sqrt{3}}{2} & 0 \\
+\frac{\sqrt{3}}{2} & \frac{1}{2} & 0 \\
+0 & 0 & 1
+\end{pmatrix}$ &
+$\begin{pmatrix}
+\frac{1}{2} & \frac{\sqrt{3}}{2} & 0 \\
+-\frac{\sqrt{3}}{2} & \frac{1}{2} & 0 \\
+0 & 0 & 1
+\end{pmatrix}$ \\
+\hline
+$\hat{C}_3$ &
+$\hat{C}_3^{-1}$ &
+$\hat{C}_2$ \\
+\hline
+$\begin{pmatrix}
+-\frac{1}{2} & -\frac{\sqrt{3}}{2} & 0 \\
+\frac{\sqrt{3}}{2} & -\frac{1}{2} & 0 \\
+0 & 0 & 1
+\end{pmatrix}$ &
+$\begin{pmatrix}
+-\frac{1}{2}  & \frac{\sqrt{3}}{2} & 0 \\
+-\frac{\sqrt{3}}{2} & -\frac{1}{2} & 0 \\
+0 & 0 & 1
+\end{pmatrix}$ &
+$\begin{pmatrix}
+-1 & 0 & 0 \\
+0 & -1 & 0 \\
+0 & 0 & 1
+\end{pmatrix}$ \\
+\hline
+$\hat{\sigma}_{v1}(30^\circ)$ &
+$\hat{\sigma}_{v2}(150^\circ)$ &
+$\hat{\sigma}_{v3}(270^\circ)$ \\
+\hline
+$\begin{pmatrix}
+\frac{1}{2} & \frac{\sqrt{3}}{2} & 0 \\
+\frac{\sqrt{3}}{2} & -\frac{1}{2} & 0 \\
+0 & 0 & 1
+\end{pmatrix}$ &
+$\begin{pmatrix}
+\frac{1}{2} & -\frac{\sqrt{3}}{2} & 0 \\
+-\frac{\sqrt{3}}{2} & -\frac{1}{2} & 0 \\
+0 & 0 & 1
+\end{pmatrix}$ &
+$\begin{pmatrix}
+-1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{pmatrix}$ \\
+\hline
+$\hat{\sigma}_{d1}(0^\circ)$ &
+$\hat{\sigma}_{d2}(120^\circ)$ &
+$\hat{\sigma}_{d3}(240^\circ)$ \\
+\hline
+$\begin{pmatrix}
+1 & 0 & 0 \\
+0 & -1 & 0 \\
+0 & 0 & 1
+\end{pmatrix}$ &
+$\begin{pmatrix}
+-\frac{1}{2} & -\frac{\sqrt{3}}{2} & 0 \\
+-\frac{\sqrt{3}}{2} & \frac{1}{2} & 0 \\
+0 & 0 & 1
+\end{pmatrix}$ &
+$\begin{pmatrix}
+-\frac{1}{2} & \frac{\sqrt{3}}{2} & 0 \\
+\frac{\sqrt{3}}{2} & \frac{1}{2} & 0 \\
+0 & 0 & 1
+\end{pmatrix}$ \\
+\hline
+\end{tabular}
+\caption{C$_{6v}$ 點群對稱操作\cite{koster1963properties}}
+\label{tab:C_6對稱操作矩陣}
+\end{table}
+
+\section{極化率張量的對稱性簡化實例}
+我們以Neumann principle針對$\hat{C_2}$操作進行推導。三階極化率張量表示為%接著將極化率張量寫為
+\begin{equation}
+    \chi^{(2)}_{ijk}=\begin{pmatrix}
+        \chi^{(2)}_{111} & \chi^{(2)}_{122} & \chi^{(2)}_{133} & \chi^{(2)}_{123} & \chi^{(2)}_{113} & \chi^{(2)}_{112} \\
+        \chi^{(2)}_{211} & \chi^{(2)}_{222} & \chi^{(2)}_{233} & \chi^{(2)}_{223} & \chi^{(2)}_{213} & \chi^{(2)}_{212} \\
+        \chi^{(2)}_{311} & \chi^{(2)}_{322} & \chi^{(2)}_{333} & \chi^{(2)}_{323} & \chi^{(2)}_{313} & \chi^{(2)}_{312}
+    \end{pmatrix}
+\label{eq:chi}
+\end{equation}
+% 再根據Neumann原理，式(~\ref{eq:neumann})，對極化率張量進行對稱性操作的運算。
+使用$\hat{C_2}$操作矩陣(式(~\ref{eq:C2v}))，並將此線性轉換矩陣元帶入式(~\ref{eq:neumann})，且$a_{11}=-1,a_{22}=-1,a_{33}=1,a_{12}=a_{21}=a_{13}=a_{31}=a_{23}=a_{32}=0$:
+\begin{equation}
+    \chi_{111}^{(2)'}=a_{11}a_{11}a_{11}\chi_{111}^{(2)}
+    =\chi_{111}^{(2)}
+\end{equation}
+以此式計算可以得到
+\begin{equation}
+    \chi_{111}^{(2)'}=-\chi_{111}^{(2)}
+\end{equation}
+由此可知$\chi_{111}^{(2)}=0$。
+\begin{equation}
+    \chi_{113}^{(2)'}=a_{11}a_{11}a_{33}\chi_{113}^{(2)}=\chi_{113}^{(2)} 
+\end{equation}
+可得$\chi_{113}^{(2)'}=\chi_{113}^{(2)}$。
+\begin{equation}
+    \chi_{123}^{(2)'}=a_{11}a_{22}a_{33}\chi_{123}^{(2)}=\chi_{123}^{(2)} 
+\end{equation}
+可得$\chi_{123}^{(2)'}=\chi_{123}^{(2)}$。
+\begin{equation}
+    \chi_{311}^{(2)'}=a_{33}a_{11}a_{11}\chi_{311}^{(2)}=\chi_{311}^{(2)} 
+\end{equation}
+可得$\chi_{311}^{(2)'}=\chi_{311}^{(2)}$。
+\begin{equation}
+    \chi_{322}^{(2)'}=a_{33}a_{22}a_{22}\chi_{322}^{(2)}=\chi_{322}^{(2)} 
+\end{equation}
+可得$\chi_{322}^{(2)'}=\chi_{322}^{(2)}$。
+\begin{equation}
+    \chi_{333}^{(2)'}=a_{33}a_{33}a_{33}\chi_{333}^{(2)}=\chi_{333}^{(2)} 
+\end{equation}
+可得$\chi_{333}^{(2)'}=\chi_{333}^{(2)}$。
+由上述計算，我們可以得到在$\hat{C}_2$對稱性操作轉換下，所得到的極化率張量非零元的分布為:
+\begin{equation}
+        \hat{C}_2 \rightarrow\begin{pmatrix}
+        0 & 0 & 0 & 0 &\chi^{(2)}_{131} & 0 \\
+        0 & 0 & 0 & \chi^{(2)}_{123} & 0 & 0 \\
+        \chi^{(2)}_{311} & \chi^{(2)}_{322} & \chi^{(2)}_{333} & 0 & 0 & 0 
+    \end{pmatrix}
+\end{equation}
+由此方法我們可以計算出在該點群中，在其他對稱性操作下的極化率張量，並且將在不同對稱性操作後的所得出的非零分量取交集，便可以得到最終符合在該點群對稱性下所符合的非零張量分布。如氮化鎵材料，其點群為$C_{6v}$，將對稱性操作後所得到的非零極化率張量元表示:
+\begin{equation}
+    \hat{C}_6 \rightarrow\begin{pmatrix}
+        \chi^{(2)}_{111} & \chi^{(2)}_{122} & 0 & \chi^{(2)}_{123} & \chi^{(2)}_{223} & \chi^{(2)}_{112} \\
+        \chi^{(2)}_{211} & \chi^{(2)}_{222} & 0 & \chi^{(2)}_{223} & -\chi^{(2)}_{123} & \chi^{(2)}_{212} \\
+        \chi^{(2)}_{311} & \chi^{(2)}_{322} & \chi^{(2)}_{333} & 0 & 0 & \chi^{(2)}_{312}
+    \end{pmatrix}
+\end{equation}
+
+% \begin{equation}
+%         \hat{C}_2 \rightarrow\begin{pmatrix}
+%         0 & 0 & 0 & 0 &\chi^{(2)}_{131} & 0 \\
+%         0 & 0 & 0 & \chi^{(2)}_{123} & 0 & 0 \\
+%         \chi^{(2)}_{311} & \chi^{(2)}_{322} & \chi^{(2)}_{333} & 0 & 0 & 0 
+%     \end{pmatrix}
+% \end{equation}
+
+\begin{equation}
+    \hat{C}_3 \rightarrow\begin{pmatrix}
+        \chi^{(2)}_{111} & \chi^{(2)}_{122} & 0 & \chi^{(2)}_{123} & \chi^{(2)}_{131} & \chi^{(2)}_{112} \\
+        \chi^{(2)}_{211} & \chi^{(2)}_{222} & 0 & \chi^{(2)}_{223} & \chi^{(2)}_{231} & \chi^{(2)}_{212} \\
+        \chi^{(2)}_{311} & \chi^{(2)}_{322} & \chi^{(2)}_{333} & 0 & 0 & 0
+    \end{pmatrix}
+\end{equation}
+
+\begin{equation}
+    \hat{\sigma}_{v3}(270^\circ)\rightarrow\begin{pmatrix}
+        0 & 0 & 0 & 0 & \chi^{(2)}_{131} & \chi^{(2)}_{112} \\
+        \chi^{(2)}_{211} & \chi^{(2)}_{222} & \chi^{(2)}_{233} & \chi^{(2)}_{223} & 0 & 0 \\
+        \chi^{(2)}_{311} & \chi^{(2)}_{322} & \chi^{(2)}_{333} & 0 & 0 & 0
+    \end{pmatrix}
+\end{equation}
+
+\begin{equation}
+    \hat{\sigma}_{d1}(0^\circ)\rightarrow\begin{pmatrix}
+        \chi^{(2)}_{111} & \chi^{(2)}_{122} & \chi^{(2)}_{133} & 0 & \chi^{(2)}_{131} & 0 \\
+        0 & 0 & 0 &\chi^{(2)}_{223} & 0 & \chi^{(2)}_{212} \\
+        \chi^{(2)}_{311} & \chi^{(2)}_{322} & \chi^{(2)}_{333} & 0 & \chi^{(2)}_{331} & 0
+    \end{pmatrix}
+\end{equation}
+
+\begin{equation}
+\hat{\sigma}_{v3}(270^\circ)\rightarrow
+    \begin{pmatrix}
+        0 & 0 & \chi^{(2)}_{133} & \chi^{(2)}_{123} & \chi^{(2)}_{131} & \chi^{(2)}_{112}\\
+        \chi^{(2)}_{211} & \chi^{(2)}_{222} & \chi^{(2)}_{233} & \chi^{(2)}_{223} & 0 & \chi^{(2)}_{212}\\
+        \chi^{(2)}_{311} & \chi^{(2)}_{322} & \chi^{(2)}_{333} & \chi^{(2)}_{323} & 0 & 0
+    \end{pmatrix}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{table}[h]
+% \centering
+% \renewcommand{\arraystretch}{1.2}
+% \begin{tabular}{c|cccccc|c}
+% \hline
+% 張量分量 $\chi^{(2)}_{ijk}$ & $R_1$ & $R_2$ & $R_3$ & $R_4$ & $R_5$ & $R_6$ & 最終是否保留 \\
+% \hline
+% $\chi^{(2)}_{111}$ & \checkmark & \checkmark & \checkmark & \checkmark & \textcolor{red}{×} & \checkmark & × \\
+% $\chi^{(2)}_{113}$ & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+% $\chi^{(2)}_{123}$ & \checkmark & \checkmark & \textcolor{red}{×} & \checkmark & \checkmark & \checkmark & × \\
+% $\chi^{(2)}_{311}$ & \checkmark & \checkmark & \checkmark & \checkmark & \textcolor{red}{×} & \checkmark & × \\
+% $\chi^{(2)}_{333}$ & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+% ... & ... & ... & ... & ... & ... & ... & ... \\
+% \hline
+% \end{tabular}
+% \caption{各對稱操作下極化率張量分量是否保留，並統整其交集結果}
+% \label{tab:symmetry_tensor_reduction}
+% \end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+最終得到的結果為:
+\begin{equation}
+    \chi_{ijk}^{(2)}(\hat{C}_{6v})=\begin{pmatrix}
+        0 & 0 & 0 & 0 & \chi_{123}^{(2)} & 0 \\
+        0 & 0 & 0 & \chi_{223}^{(2)} & 0 & 0 \\
+        \chi_{311}^{(2)} & \chi_{322}^{(2)} & \chi_{333}^{(2)} & 0  & 0 & 0
+    \end{pmatrix}
+\end{equation}
+而$\hat{C}_{2v}=\{\hat{E},\hat{C}_2,\hat{\sigma}_x,\hat{\sigma}_y\}$以及$\hat{C}_{3v}=\{\hat{E}, \hat{C}_3,\hat{C}_3^{-1},\hat{\sigma_{d1}},\hat{\sigma}_{d2},\hat{\sigma}_{d3}\}$也依照此方式，可以推得在此兩種點群下的極化率張量非零元的分布:
+\begin{equation}
+    \chi_{ijk}^{(2)}(\hat{C}_{2v})=\begin{pmatrix}
+        0 & 0 & 0 & 0 & \chi_{123}^{(2)} & 0 \\
+        0 & 0 & 0 & \chi_{223}^{(2)} & 0 & 0 \\
+        \chi_{311}^{(2)} & \chi_{322}^{(2)} & \chi_{333}^{(2)} & 0  & 0 & 0
+    \end{pmatrix}
+\end{equation}
+\begin{equation}
+    \chi_{ijk}^{(2)}(\hat{C}_{3v})=\begin{pmatrix}
+        0 & 0 & 0 & 0 & \chi_{123}^{(2)} & \chi_{112}^{(2)} \\
+        \chi_{211}^{(2)} & \chi_{222}^{(2)} & 0 & \chi_{223}^{(2)} & 0 & 0 \\
+        \chi_{311}^{(2)} & \chi_{322}^{(2)} & \chi_{333}^{(2)} & 0  & 0 & 0
+    \end{pmatrix}
+\end{equation}
+
+
+% \begin{equation}
+%     \hat{C_2}=\begin{pmatrix}
+% -1 & 0 & 0 \\
+% 0 & -1 & 0 \\
+% 0 & 0 & 1
+% \end{pmatrix}
+% \end{equation}
+% \begin{equation}
+%     a_{11}=-1,\space a_{22}=-1,\space a_{33}=1,\space a_{12}=a_{13}=a_{21}=a_{23}=a_{31}=a_{32}=0
+% \end{equation}
+% \begin{align}
+%     \chi_{111}'^{(2)}&=a_{11}a_{11}a_{11}\chi_{111}^{(2)}+a_{11}a_{11}a_{12}\chi_{112}^{(2)}+a_{11}a_{11}a_{13}\chi_{113}^{(2)} \notag \\
+%     +&a_{11}a_{12}a_{11}\chi_{121}^{(2)}+a_{11}a_{12}a_{12}\chi_{122}^{(2)}+a_{11}a_{12}a_{13}\chi_{123}^{(2)} \notag \\
+%     +&a_{11}a_{13}a_{11}\chi_{131}^{(2)}+a_{11}a_{13}a_{12}\chi_{132}^{(2)}+a_{11}a_{13}a_{13}\chi_{133}^{(2)} \notag \\
+%     +&a_{12}a_{11}a_{11}\chi_{211}^{(2)}+a_{12}a_{11}a_{12}\chi_{212}^{(2)}+a_{12}a_{11}a_{13}\chi_{213}^{(2)} \notag \\
+%     +&a_{12}a_{12}a_{11}\chi_{221}^{(2)}+a_{12}a_{12}a_{12}\chi_{222}^{(2)}+a_{12}a_{12}a_{13}\chi_{223}^{(2)} \notag \\
+%     +&a_{12}a_{13}a_{11}\chi_{231}^{(2)}+a_{12}a_{13}a_{12}\chi_{232}^{(2)}+a_{12}a_{13}a_{13}\chi_{233}^{(2)} \notag \\
+%     +&a_{13}a_{11}a_{11}\chi_{311}^{(2)}+a_{13}a_{11}a_{12}\chi_{312}^{(2)}+a_{13}a_{11}a_{13}\chi_{313}^{(2)} \notag \\
+%     +&a_{13}a_{12}a_{11}\chi_{321}^{(2)}+a_{13}a_{12}a_{12}\chi_{322}^{(2)}+a_{13}a_{12}a_{13}\chi_{323}^{(2)} \notag \\
+%     +&a_{13}a_{13}a_{11}\chi_{331}^{(2)}+a_{13}a_{13}a_{12}\chi_{332}^{(2)}+a_{13}a_{13}a_{13}\chi_{333}^{(2)} \notag \\
+%     =&-\chi_{111}^{(2)}=\chi_{111}^{(2)}
+% \end{align}
+% \begin{align}
+%     &\chi'^{(2)}_{111}=-\chi_{111}^{(2)}=0 \quad 
+%     \chi'^{(2)}_{112}=-\chi_{112}^{(2)}=0 \quad
+%     \chi'^{(2)}_{113}=\chi_{113}^{(2)}=\chi_{113}^{(2)} \notag \\
+%     &\chi'^{(2)}_{121}=-\chi_{121}^{(2)}=0 \quad
+%     \chi'^{(2)}_{122}=-\chi_{122}^{(2)}=0 \quad
+%     \chi'^{(2)}_{123}=\chi_{123}^{(2)}=\chi_{123}^{(2)} \notag \\
+%     &\chi'^{(2)}_{131}=\chi_{131}^{(2)}=\chi_{131}^{(2)} \quad
+%     \chi'^{(2)}_{132}=\chi_{132}^{(2)}=\chi_{132}^{(2)} \quad
+%     \chi'^{(2)}_{133}=-\chi_{133}^{(2)}=0 \notag \\
+%     &\space \notag \\
+%     &\chi'^{(2)}_{211}=-\chi_{211}^{(2)}=0 \quad
+%     \chi'^{(2)}_{212}=-\chi_{212}^{(2)}=0 \quad
+%     \chi'^{(2)}_{213}=\chi_{213}^{(2)}=\chi_{213}^{(2)} \notag \\
+%     &\chi'^{(2)}_{221}=-\chi_{221}^{(2)}=0 \quad
+%     \chi'^{(2)}_{222}=-\chi_{222}^{(2)}=0 \quad
+%     \chi'^{(2)}_{223}=\chi_{223}^{(2)}=\chi_{223}^{(2)} \notag \\
+%     &\chi'^{(2)}_{231}=\chi_{231}^{(2)}=\chi_{231}^{(2)} \quad
+%     \chi'^{(2)}_{232}=\chi_{232}^{(2)}=\chi_{232}^{(2)} \quad
+%     \chi'^{(2)}_{233}=-\chi_{233}^{(2)}=0 \notag \\
+%     &\space \notag \\
+%     &\chi'^{(2)}_{311}=\chi_{311}^{(2)}=\chi_{311}^{(2)} \quad
+%     \chi'^{(2)}_{312}=\chi_{312}^{(2)}=\chi_{312}^{(2)} \quad
+%     \chi'^{(2)}_{313}=-\chi_{313}^{(2)}=0 \notag \\
+%     &\chi'^{(2)}_{321}=\chi_{321}^{(2)}=\chi_{321}^{(2)} \quad
+%     \chi'^{(2)}_{322}=\chi_{322}^{(2)}=\chi_{322}^{(2)} \quad
+%     \chi'^{(2)}_{323}=-\chi_{323}^{(2)}=0 \notag \\
+%     &\chi'^{(2)}_{331}=-\chi_{331}^{(2)}=0 \quad
+%     \chi'^{(2)}_{332}=-\chi_{332}^{(2)}=0 \quad
+%     \chi'^{(2)}_{333}=\chi_{333}^{(2)}=\chi_{333}^{(2)} \notag 
+% \end{align}
+
+% \begin{equation}
+% \chi^{(2)}_{ijk}=
+%     \begin{pmatrix}
+%         0 & 0 & 0 & \chi^{(2)}_{123} & \chi^{(2)}_{131} & 0\\
+%         0 & 0 & 0 & \chi^{(2)}_{223} & \chi^{(2)}_{231} & 0\\
+%         \chi^{(2)}_{311} & \chi^{(2)}_{322} & \chi^{(2)}_{333} & 0 & 0 & \chi^{(2)}_{312}
+%     \end{pmatrix}
+% \end{equation}
+%%%%%%%%%%%%%%%%%%%%%
+% \begin{equation}
+%     \hat{\sigma}_{v3}(270^\circ)=\begin{pmatrix}
+% -1 & 0 & 0 \\
+% 0 & 1 & 0 \\
+% 0 & 0 & 1
+% \end{pmatrix}
+% \end{equation}
+% \begin{equation}
+%     a_{11}=-1,\space a_{22}=1,\space a_{33}=1,\space a_{12}=a_{13}=a_{21}=a_{23}=a_{31}=a_{32}=0
+% \end{equation}
+
+% \begin{align}
+%     &\chi'^{(2)}_{111}=-\chi_{111}^{(2)}=0 \quad \notag
+%     \chi'^{(2)}_{112}=\chi_{112}^{(2)}=\chi_{112}^{(2)} \quad \notag
+%     \chi'^{(2)}_{113}=\chi_{113}^{(2)}=\chi_{113}^{(2)} \quad \notag \\
+%     &\chi'^{(2)}_{121}=\chi_{121}^{(2)}=\chi_{121}^{(2)} \quad \notag
+%     \chi'^{(2)}_{122}=-\chi_{122}^{(2)}=0 \quad \notag
+%     \chi'^{(2)}_{123}=-\chi_{123}^{(2)}=0 \quad \notag \\
+%     &\chi'^{(2)}_{131}=\chi_{131}^{(2)}=\chi_{131}^{(2)} \quad \notag
+%     \chi'^{(2)}_{132}=\chi_{132}^{(2)}=\chi_{132}^{(2)} \quad \notag
+%     \chi'^{(2)}_{133}=\chi_{133}^{(2)}=\chi_{133}^{(2)} \quad \notag \\
+%     &\chi'^{(2)}_{211}=\chi_{211}^{(2)}=\chi_{211}^{(2)} \quad \notag
+%     \chi'^{(2)}_{212}=\chi_{212}^{(2)}=\chi_{212}^{(2)} \quad \notag
+%     \chi'^{(2)}_{213}=\chi_{213}^{(2)}=\chi_{213}^{(2)} \quad \notag \\
+%     &\chi'^{(2)}_{221}=-\chi_{221}^{(2)}=0 \quad \notag
+%     \chi'^{(2)}_{222}=\chi_{222}^{(2)}=\chi_{222}^{(2)} \quad \notag
+%     \chi'^{(2)}_{223}=\chi_{223}^{(2)}=\chi_{223}^{(2)} \quad \notag \\
+%     &\chi'^{(2)}_{231}=-\chi_{231}^{(2)}=0 \quad \notag
+%     \chi'^{(2)}_{232}=\chi_{232}^{(2)}=\chi_{232}^{(2)} \quad \notag
+%     \chi'^{(2)}_{233}=\chi_{233}^{(2)}=\chi_{233}^{(2)} \quad \notag \\
+%     &\chi'^{(2)}_{311}=\chi_{311}^{(2)}=\chi_{311}^{(2)} \quad \notag
+%     \chi'^{(2)}_{312}=-\chi_{312}^{(2)}=0 \quad \notag
+%     \chi'^{(2)}_{313}=-\chi_{313}^{(2)}=0 \quad \notag \\
+%     &\chi'^{(2)}_{321}=-\chi_{321}^{(2)}=0 \quad \notag
+%     \chi'^{(2)}_{322}=\chi_{322}^{(2)}=\chi_{322}^{(2)} \quad \notag
+%     \chi'^{(2)}_{323}=\chi_{323}^{(2)}=\chi_{323}^{(2)} \quad \notag \\
+%     &\chi'^{(2)}_{331}=-\chi_{331}^{(2)}=0 \quad \notag
+%     \chi'^{(2)}_{332}=\chi_{332}^{(2)}=\chi_{332}^{(2)} \quad \notag
+%     \chi'^{(2)}_{333}=\chi_{333}^{(2)}=\chi_{333}^{(2)} \quad \notag \\
+% \end{align}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{equation}
+% \chi^{(2)}_{ijk}=
+%     \begin{pmatrix}
+%         0 & 0 & \chi^{(2)}_{133} & \chi^{(2)}_{123} & \chi^{(2)}_{131} & \chi^{(2)}_{112}\\
+%         \chi^{(2)}_{211} & \chi^{(2)}_{222} & \chi^{(2)}_{233} & \chi^{(2)}_{223} & 0 & \chi^{(2)}_{212}\\
+%         \chi^{(2)}_{311} & \chi^{(2)}_{322} & \chi^{(2)}_{333} & \chi^{(2)}_{323} & 0 & 0
+%     \end{pmatrix}
+% \end{equation}
+
+% %%%%%%%%%%%%%%%%%%%%%%
+% % \begin{equation}
+% %     \hat{C_6}=\begin{pmatrix}
+% % \frac{1}{2} & \frac{-\sqrt{3}}{2} & 0 \\
+% % \frac{\sqrt{3}}{2} & \frac{1}{2} & 0 \\
+% % 0 & 0 & 1
+% % \end{pmatrix}
+% % \end{equation}
+% % \begin{equation}
+% %     a_{11}=\frac{1}{2},\space a_{12}=\frac{-\sqrt{3}}{2},\space a_{21}=\frac{\sqrt{3}}{2},\space a_{22}=\frac{1}{2},\space a_{33}=1,\space a_{13}=a_{23}=a_{31}=a_{32}=0
+% % \end{equation}
+
+% % \begin{align}
+% %     &\chi'^{(2)}_{111}=\frac{1}{8}\chi_{111}^{(2)}+\frac{-\sqrt{3}}{8}\chi_{112}^{(2)}+\frac{-\sqrt{3}}{8}\chi_{121}^{(2)}+\frac{3}{8}\chi_{122}^{(2)}+\frac{-\sqrt{3}}{8}\chi_{211}^{(2)}+\frac{3}{8}\chi_{212}^{(2)}+\frac{3}{8}\chi_{221}^{(2)}+\frac{-3\sqrt{3}}{8}\chi_{222}^{(2)}=\chi^{(2)}_{111} \notag \\
+% %     &\chi'^{(2)}_{112}=\frac{\sqrt{3}}{8}\chi_{111}^{(2)}+\frac{1}{8}\chi_{112}^{(2)}+\frac{-3}{8}\chi_{121}^{(2)}+\frac{\sqrt{3}}{8}\chi_{122}^{(2)}+\frac{3}{8}\chi_{211}^{(2)}+\frac{-\sqrt{3}}{8}\chi_{212}^{(2)}+\frac{3\sqrt{3}}{8}\chi_{221}^{(2)}+\frac{3}{8}\chi_{222}^{(2)}=\chi_{112}^{(2)} \notag \\
+% %     &\chi'^{(2)}_{113}=\frac{1}{4}\chi^{(2)}_{113}+\frac{-\sqrt{3}}{4}\chi^{(2)_{123}}+\frac{-\sqrt{3}}{4}\chi^{(2)}_{213}+\frac{3}{4}\chi^{(2)}_{223}=\chi_{113}^{(2)} \notag \\
+% %     &\chi'^{(2)}_{121}=\frac{\sqrt{3}}{8}\chi_{111}^{(2)}+\frac{-3}{8}\chi_{112}^{(2)}+\frac{1}{8}\chi_{121}^{(2)}+\frac{-\sqrt{3}}{8}\chi_{122}^{(2)}+\frac{-3}{8}\chi_{211}^{(2)}+\frac{-3\sqrt{3}}{8}\chi_{212}^{(2)}+\frac{-\sqrt{3}}{8}\chi_{221}^{(2)}+\frac{3}{8}\chi_{222}^{(2)}=\chi_{121}^{(2)} \notag \\
+% %     &\chi'^{(2)}_{122}=\frac{3}{8}\chi_{111}^{(2)}+\frac{\sqrt{3}}{8}\chi_{112}^{(2)}+\frac{\sqrt{3}}{8}\chi_{121}^{(2)}+\frac{1}{8}\chi_{122}^{(2)}+\frac{-3\sqrt{3}}{8}\chi_{211}^{(2)}+\frac{3}{8}\chi_{212}^{(2)}+\frac{-3}{8}\chi_{221}^{(2)}+\frac{3}{8}\chi_{222}^{(2)}=\chi_{122}^{(2)} \notag \\
+% %     &\chi'^{(2)}_{123}=\frac{\sqrt{3}}{4}\chi^{(2)}_{113}+\frac{1}{4}\chi^{(2)_{123}}+\frac{-3}{4}\chi^{(2)}_{213}+\frac{-\sqrt{3}}{4}\chi^{(2)}_{223}=\chi_{123}^{(2)} \notag \\
+% %     &\chi'^{(2)}_{131}=\frac{1}{4}\chi^{(2)}_{113}+\frac{-\sqrt{3}}{4}\chi^{(2)_{123}}+\frac{-\sqrt{3}}{4}\chi^{(2)}_{213}+\frac{3}{4}\chi^{(2)}_{223}=\chi_{131}^{(2)} \notag \\
+% %     &\chi'^{(2)}_{132}=\frac{\sqrt{3}}{4}\chi^{(2)}_{113}+\frac{1}{4}\chi^{(2)_{123}}+\frac{-3}{4}\chi^{(2)}_{213}+\frac{-\sqrt{3}}{4}\chi^{(2)}_{223}=\chi_{132}^{(2)} \notag \\
+% %     &\chi'^{(2)}_{133}=\frac{1}{2}\chi_{133}^{(2)}+\frac{-\sqrt{3}}{2}\chi_{233}^{(2)}=\chi_{133}^{(2)} \notag \\
+    
+%     % &\space \notag \\
+%     % &\chi'^{(2)}_{211}=\chi_{211}^{(2)}=\chi_{211}^{(2)} \notag \\
+%     % &\chi'^{(2)}_{212}=\chi_{212}^{(2)}=\chi_{212}^{(2)} \notag \\
+%     % &\chi'^{(2)}_{213}=\chi_{213}^{(2)}=\chi_{213}^{(2)} \notag \\
+%     % &\chi'^{(2)}_{221}=-\chi_{221}^{(2)}=0 \notag \\
+%     % &\chi'^{(2)}_{222}=\chi_{222}^{(2)}=\chi_{222}^{(2)} \notag \\
+%     % &\chi'^{(2)}_{223}=\chi_{223}^{(2)}=\chi_{223}^{(2)} \notag \\
+%     % &\chi'^{(2)}_{231}=-\chi_{231}^{(2)}=0 \notag \\
+%     % &\chi'^{(2)}_{232}=\chi_{232}^{(2)}=\chi_{232}^{(2)} \notag \\
+%     % &\chi'^{(2)}_{233}=\chi_{233}^{(2)}=\chi_{233}^{(2)} \notag \\
+%     % &\space \notag \\
+%     % &\chi'^{(2)}_{311}=\chi_{311}^{(2)}=\chi_{311}^{(2)} \notag \\
+%     % &\chi'^{(2)}_{312}=-\chi_{312}^{(2)}=0 \notag \\
+%     % &\chi'^{(2)}_{313}=-\chi_{313}^{(2)}=0 \notag \\
+%     % &\chi'^{(2)}_{321}=-\chi_{321}^{(2)}=0 \notag \\
+%     % &\chi'^{(2)}_{322}=\chi_{322}^{(2)}=\chi_{322}^{(2)} \notag \\
+%     % &\chi'^{(2)}_{323}=\chi_{323}^{(2)}=\chi_{323}^{(2)} \notag \\
+%     % &\chi'^{(2)}_{331}=-\chi_{331}^{(2)}=0 \notag \\
+%     % &\chi'^{(2)}_{332}=\chi_{332}^{(2)}=\chi_{332}^{(2)} \notag \\
+%     % &\chi'^{(2)}_{333}=\chi_{333}^{(2)}=\chi_{333}^{(2)} \notag \\
+% % \end{align}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % \begin{equation}
+% % \chi^{(2)}_{ijk}=
+% %     \begin{pmatrix}
+% %         0 & 0 & \chi^{(2)}_{133} & \chi^{(2)}_{123} & \chi^{(2)}_{131} & \chi^{(2)}_{112}\\
+% %         \chi^{(2)}_{211} & \chi^{(2)}_{222} & \chi^{(2)}_{233} & \chi^{(2)}_{223} & 0 & \chi^{(2)}_{212}\\
+% %         \chi^{(2)}_{311} & \chi^{(2)}_{322} & \chi^{(2)}_{333} & \chi^{(2)}_{323} & 0 & 0
+% %     \end{pmatrix}
+% % \end{equation}
+
+% %%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{equation}
+%     \hat{C}_6 \rightarrow\begin{pmatrix}
+%         \chi^{(2)}_{111} & \chi^{(2)}_{122} & 0 & \chi^{(2)}_{123} & \chi^{(2)}_{223} & \chi^{(2)}_{112} \\
+%         \chi^{(2)}_{211} & \chi^{(2)}_{222} & 0 & \chi^{(2)}_{223} & -\chi^{(2)}_{123} & \chi^{(2)}_{212} \\
+%         \chi^{(2)}_{311} & \chi^{(2)}_{322} & \chi^{(2)}_{333} & 0 & 0 & \chi^{(2)}_{312}
+%     \end{pmatrix}
+% \end{equation}
+
+% \begin{equation}
+%         \hat{C}_2 \rightarrow\begin{pmatrix}
+%         0 & 0 & 0 & 0 &\chi^{(2)}_{131} & 0 \\
+%         0 & 0 & 0 & \chi^{(2)}_{123} & 0 & 0 \\
+%         \chi^{(2)}_{311} & \chi^{(2)}_{322} & \chi^{(2)}_{333} & 0 & 0 & 0 
+%     \end{pmatrix}
+% \end{equation}
+
+% \begin{equation}
+%     \hat{C}_3 \rightarrow\begin{pmatrix}
+%         \chi^{(2)}_{111} & \chi^{(2)}_{122} & 0 & \chi^{(2)}_{123} & \chi^{(2)}_{131} & \chi^{(2)}_{112} \\
+%         \chi^{(2)}_{211} & \chi^{(2)}_{222} & 0 & \chi^{(2)}_{223} & \chi^{(2)}_{231} & \chi^{(2)}_{212} \\
+%         \chi^{(2)}_{311} & \chi^{(2)}_{322} & \chi^{(2)}_{333} & 0 & 0 & 0
+%     \end{pmatrix}
+% \end{equation}
+
+% \begin{equation}
+%     \hat{\sigma}_{v3}(270^\circ)\rightarrow\begin{pmatrix}
+%         0 & 0 & 0 & 0 & \chi^{(2)}_{131} & \chi^{(2)}_{112} \\
+%         \chi^{(2)}_{211} & \chi^{(2)}_{222} & \chi^{(2)}_{233} & \chi^{(2)}_{223} & 0 & 0 \\
+%         \chi^{(2)}_{311} & \chi^{(2)}_{322} & \chi^{(2)}_{333} & 0 & 0 & 0
+%     \end{pmatrix}
+% \end{equation}
+
+% \begin{equation}
+%     \hat{\sigma}_{d1}(0^\circ)\rightarrow\begin{pmatrix}
+%         \chi^{(2)}_{111} & \chi^{(2)}_{122} & \chi^{(2)}_{133} & 0 & \chi^{(2)}_{131} & 0 \\
+%         0 & 0 & 0 &\chi^{(2)}_{223} & 0 & \chi^{(2)}_{212} \\
+%         \chi^{(2)}_{311} & \chi^{(2)}_{322} & \chi^{(2)}_{333} & 0 & \chi^{(2)}_{331} & 0
+%     \end{pmatrix}
+% \end{equation}
+
+% \begin{equation}
+% \hat{\sigma}_{v3}(270^\circ)\rightarrow
+%     \begin{pmatrix}
+%         0 & 0 & \chi^{(2)}_{133} & \chi^{(2)}_{123} & \chi^{(2)}_{131} & \chi^{(2)}_{112}\\
+%         \chi^{(2)}_{211} & \chi^{(2)}_{222} & \chi^{(2)}_{233} & \chi^{(2)}_{223} & 0 & \chi^{(2)}_{212}\\
+%         \chi^{(2)}_{311} & \chi^{(2)}_{322} & \chi^{(2)}_{333} & \chi^{(2)}_{323} & 0 & 0
+%     \end{pmatrix}
+% \end{equation}
+
+% 以此類推，將所有對稱性操作根據式(~\ref{eq:Neumann})對極化率張量式(~\ref{eq:chi})進行計算，最後將不同對稱性操作後所得的二階極化張量非零值取交集，就可以得到該點群所符合的二階張量非零值的分布。如氮化鎵材料，其點群為$C_{6v}$，最終得到的結果為:
+% \begin{equation}
+%     \chi_{ijk}^{(2)}=\begin{pmatrix}
+%         0 & 0 & 0 & 0 & \chi_{123}^{(2)} & 0 \\
+%         0 & 0 & 0 & \chi_{223}^{(2)} & 0 & 0 \\
+%         \chi_{311}^{(2)} & \chi_{322}^{(2)} & \chi_{333}^{(2)} & 0  & 0 & 0
+%     \end{pmatrix}
+% \end{equation}
+
+\end{Appx}

@@ -1,0 +1,51 @@
+\contentsline {chapter}{\textbf {中文摘要}}{i}{section*.1}%
+\contentsline {chapter}{\textbf {Abstract}}{ii}{section*.2}%
+\contentsline {chapter}{\textbf {目錄}}{iii}{section*.3}%
+\contentsline {chapter}{\textbf {圖目錄}}{v}{section*.4}%
+\contentsline {chapter}{\textbf {表目錄}}{vii}{section*.5}%
+\contentsline {chapter}{\numberline {1}緒論}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}研究背景與動機}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}非線性光學(Nonlinear optics)概述}{1}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}晶體缺陷與與SHG關係}{2}{subsection.1.2.1}%
+\contentsline {section}{\numberline {1.3}研究目的與章節概要}{3}{section.1.3}%
+\contentsline {chapter}{\numberline {2}理論}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}二次諧波產生(Second Harmonic Generation, SHG)基本理論}{4}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}古典電偶極(Dipole)與簡諧振盪(Harmonic oscillator)模型}{4}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}簡諧振盪(Harmonic oscillator)與線性極化響應}{4}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}非線性極化}{5}{subsection.2.1.3}%
+\contentsline {subsubsection}{非線性極化向量}{7}{figure.caption.9}%
+\contentsline {subsection}{\numberline {2.1.4}非線性極化張量及其對稱性}{7}{subsection.2.1.4}%
+\contentsline {section}{\numberline {2.2}材料結構與缺陷類型}{9}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}晶體中的缺陷}{10}{subsection.2.2.1}%
+\contentsline {subsubsection}{點缺陷(Point Defects)}{11}{subsection.2.2.1}%
+\contentsline {subsubsection}{線缺陷-差排(Dislocation)}{11}{figure.caption.14}%
+\contentsline {subsubsection}{面缺陷}{14}{equation.2.27}%
+\contentsline {section}{\numberline {2.3}晶體中的應力（Stress）與應變（Strain）}{15}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}應變張量(Strain tensor)}{16}{subsection.2.3.1}%
+\contentsline {section}{\numberline {2.4}二次諧波產生效應強度分析}{17}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}費米黃金定則(Fermi's Golden Rule)計算SHG強度}{18}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}不同偏振與SHG強度關係}{19}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}使用密度泛函理論(Density Functional Theroy, DFT)與Abinit軟體計算非線性極化率}{19}{section.2.5}%
+\contentsline {chapter}{\numberline {3}結果與討論}{21}{chapter.3}%
+\contentsline {section}{\numberline {3.1}無缺陷的氮化鎵結構}{21}{section.3.1}%
+\contentsline {section}{\numberline {3.2}堆疊錯誤缺陷對SHG極化率張量的影響}{21}{section.3.2}%
+\contentsline {section}{\numberline {3.3}刃狀差排(Edge Dislocation)的應力分布}{23}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}應變與SHG張量的變化分析}{27}{subsection.3.3.1}%
+\contentsline {section}{\numberline {3.4}SHG強度分析}{29}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}極化向量與SHG強度計算}{29}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}堆疊錯誤缺陷的SHG訊號強度分析}{30}{subsection.3.4.2}%
+\contentsline {subsubsection}{當入射光為垂直入射}{31}{equation.3.22}%
+\contentsline {subsubsection}{當入射光為斜向入射}{32}{figure.caption.30}%
+\contentsline {subsection}{\numberline {3.4.3}應變結構的SHG訊號強度分析}{33}{subsection.3.4.3}%
+\contentsline {subsubsection}{當入射光為垂直入射}{34}{equation.3.29}%
+\contentsline {subsubsection}{當入射光為斜向入射}{34}{figure.caption.33}%
+\contentsline {chapter}{\numberline {4}結論與未來展望}{37}{chapter.4}%
+\contentsline {section}{\numberline {4.1}結論}{37}{section.4.1}%
+\contentsline {chapter}{\textbf {參考文獻}}{38}{section*.37}%
+\contentsline {chapter}{Appendix}{40}{section*.39}%
+\ttl@change@i {\@ne }{section}{0pt}{\addvspace {1.5pt}\filright \bf }{\contentspush {\quad \quad \quad \,\,\,\thecontentslabel \quad }}{}{\titlerule *[8pt]{.}\contentspage }\relax 
+\ttl@change@v {section}{}{}{}\relax 
+\contentsline {section}{\numberline {Appendix.1}依據Neumann Principle的極化率張量簡化推導}{41}{section.Alph0.1}%
+\contentsline {section}{\numberline {Appendix.2}$C_{6v}$點群下的張量分析}{42}{section.Alph0.2}%
+\contentsline {section}{\numberline {Appendix.3}極化率張量的對稱性簡化實例}{43}{section.Alph0.3}%
+\contentsfinish 

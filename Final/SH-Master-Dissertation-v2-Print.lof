@@ -1,0 +1,34 @@
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces (a)透過拉曼光譜量測繪製出的應力分布圖。(b)與(a)對應區域的SHG強度分布圖。\blx@tocontentsinit {0}\cite {Chiang_2023}}}{3}{figure.caption.6}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces (a)缺陷h-BN的SHG強度圖，明顯高於無缺陷結構。(b)因經由機械剝離的h-BN其缺陷較少，圖中也可觀察到其SHG強度較微弱。\blx@tocontentsinit {0}\cite {Cunha_2020}}}{3}{figure.caption.7}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces 在非中心對稱系統的位能。\blx@tocontentsinit {0}\cite {boyd2008nonlinear}}}{6}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces 化合物半導體SHG效應示意圖(a)單一元素受到隨時變電場$\mathcal {E}(t)$影響，引發電偶極線性響應震盪。(b)化合物半導體受到$\mathcal {E}$的電場，因化合物半導體由不只一種元素組成，原子結構不再保有對稱，在隨時變電場$\mathcal {E}(t)$影響下，因此產生非線性電偶極震盪。\blx@tocontentsinit {0}\cite {fox2010optical}}}{6}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces 六方最密堆積(Hexagonal closed packed)結構的堆疊位置。~\blx@tocontentsinit {0}\cite {kittel2018introduction}}}{10}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces 氮化鎵結構圖，綠色代表Ga原子，灰色代表N原子。(a)、(b)為GaN的閃鋅礦結構與其沿著[111]方向的堆疊序列。(c)、(d)為纖鋅礦結構與其沿著c軸[0001]的堆疊序列。\blx@tocontentsinit {0}\cite {frentrup2017x}}}{10}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces 晶格中的點缺陷示意圖\blx@tocontentsinit {0}\cite {raja2020rice}}}{11}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces (a)為在剪應力的作用下刃狀差排(Edge Dislocation)的運動過程；(b)刃狀差排示意圖；(c)為刃型差排的應力分布示意圖，其中綠色區域為壓應力，黃色區域為拉應力。~\blx@tocontentsinit {0}\cite {callister2020materials}}}{12}{figure.caption.15}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces 螺旋差排的示意圖。~\blx@tocontentsinit {0}\cite {hull2011introduction,callister2020materials}}}{13}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces HRTEM所看到堆疊層錯的結構圖。此圖是在GaN的[$[11\overline {2}0]$晶向上的晶體結構，其發生堆疊錯誤的方向是在c軸[0001]方向。\blx@tocontentsinit {0}\cite {PhysRevB.71.235334}}}{14}{figure.caption.17}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces 堆疊層錯的原子結構。圖(a)中a為$I_1$型，b為$I_2$型，c為$I_3$型堆疊錯誤。圖(b)高解析度TEM顯示的$I_1$型堆疊錯誤的影像，其寬度約為3奈米。圖(c)為TEM影像，箭頭所指的區域為基面堆疊錯誤缺陷與點缺陷的區域。\blx@tocontentsinit {0}\cite {batyrev2011dislocations}}}{15}{figure.caption.18}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces 微小體積元素上的應力分量示意圖\blx@tocontentsinit {0}\cite {boresi2002advanced}。圖中顯示沿笛卡爾座標軸排列的矩形元素，標示其各面上的正應力（$\sigma _{xx}$、$\sigma _{yy}$、$\sigma _{zz}$）與剪應力（$\sigma _{xy}$、$\sigma _{yx}$、$\sigma _{xz}$、$\sigma _{zx}$、$\sigma _{yz}$、$\sigma _{zy}$），用以描述材料內部某一點的應力狀態。}}{16}{figure.caption.19}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces 光的行進方向與偏振向量在空間中的示意圖。}}{18}{figure.caption.20}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces 式(~\ref {eq:chi2_wave})中$n,m,l$示意圖，$n,m,l$表示為不同的電子態，對應的能量為$E_n,E_m,E_l$，其對應的頻率分別為$\omega _n=\frac {E_n}{\hslash },\omega _m=\frac {E_m}{\hslash },\omega _l=\frac {E_l}{\hslash }$。}}{20}{figure.caption.21}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces (a)無缺陷的GaN以及在$xy$平面上的晶格向量。(b)為$C_{6v}$點群由Neumann principle推導出的二階極化率非零張量分布。黑色小點為零；有顏色的圓形為非零，顏色相同為值相同。(c)為經Abinit軟體模擬出的而階極化率張量絕對值。}}{21}{figure.caption.22}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces 氮化鎵晶體堆疊錯誤類型\blx@tocontentsinit {0}\cite {PhysRevB.71.235334,liliental2014structural,komninou2005partial}。}}{22}{figure.caption.23}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces 氮化鎵不同的堆疊錯誤缺陷類型的SHG模擬結果。極化率張量一欄是將模擬結果一欄的數值簡化表示: 正方形表示為會影響$P_x$分量 ；三角形表示為會影響$P_y$分量 ；圓形表示為會影響$P_z$分量 ；黑色的小點表示其值為零。顏色相同表示其絕對值相同。 在表格最後一欄為第一原理模擬出的極化率張量$\chi ^{(2)}$的絕對值。我們選擇能量為1.181eV(波長為1050nm)作為分析標準，取該能量下的極化率張量分量值進行比較與討論。}}{23}{figure.caption.24}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces 刃狀差排結構相對無缺陷結構的原子位移圖。利用Atomsk軟體\blx@tocontentsinit {0}\cite {hirel2015atomsk}設定刃狀差排的差排線(Dislocation line)$[0001]$，以及伯格斯向量(Burgers vector)$[11\overline {2}0]$生成GaN的刃狀差排結構。 綠色透明的部分為完美的GaN結構；深紅色為含有刃狀差排的結構；紅色圓圈標示刃狀差排的位置；藍色箭頭為表示超晶胞中的原子因刃狀差排的插入而被向外推擠，產生的位移，箭頭方向表示位移方向，箭頭長度表示位移的大小。}}{25}{figure.caption.25}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces 使用atomsk軟體\blx@tocontentsinit {0}\cite {hirel2015atomsk}將刃狀差排插入完美的晶格中，並可用解析的應力公式計算出應力的分布。紅色矩形標示的位置為刃狀差排。(a)為$\sigma _{xx}$；(b)為$\sigma _{yy}$；(c)為$\sigma _{xy}$；(d)為$\sigma _{zz}$。}}{26}{figure.caption.26}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces (a)為$\sigma _{xx}-\sigma _{yy}$。顯示在$x$方向與$y$方向應力相減後的分布，可以觀察到整體應力值變化不大，顯示主要貢獻來自$x$方向的應力。(c)為$\sigma _{xx}+\sigma _{yy}$對應於圖(~\ref {fig:edge_stress})(a)與(b)的疊加結果，可見數值有所增加，但主要貢獻仍為$x$方向，而在差排附近，其數值大致落在$0$至$-5$的範圍內。 (b)為$\sigma _{xx}-\sigma _{zz}$，與圖(~\ref {fig:edge_stress})中的(a)與(d)相比，可以看出應力仍主要集中在x方向。(d)顯示$\sigma _{xx}+\sigma _{zz}$，其數值確實進一步增加，但主要貢獻還是在x方向。綜合比較可知，刃狀差排在在空間中主要引發的應力方向為x方向，並且在差排插入附近的區域會形成壓應力(Compressive stress)。}}{27}{figure.caption.27}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces 對氮化鎵晶體作單軸應變，並模擬其二階極化率張量值。極化率張量一欄是將模擬解果一欄的數值簡化表示:正方形表示為會影響$P_x$分量；三角形表示為會影響$P_y$分量；圓形表示為會影響$P_z$分量；黑色的小點表示其值為零。顏色相同表示其絕對值相同。在表格最後一欄為第一原理模擬出的極化率張量$\chi ^{(2)}$的絕對值。}}{29}{figure.caption.28}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces 當入射光為垂直入射$\theta =0^\circ $，不同點群對應的SHG強度與方位角$\phi $的關係。}}{31}{figure.caption.30}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces 當入射光為在$xz$平面上斜向入射$\phi =0^\circ $，不同點群對應的SHG強度與$\theta $的關係。}}{32}{figure.caption.31}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces 堆疊錯誤結構的SHG強度與$\phi $、$\theta $角度的關係。當$\theta =0^\circ $，$\phi \in [0,2\pi ]$；當$\phi =0^\circ $，$\theta \in [-\frac {\pi }{2},\frac {\pi }{2}]$。}}{33}{figure.caption.32}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces 無缺陷GaN以及應變結構的點群當$\theta =0^\circ $時，所對應的SHG強度與$\phi $角度的關係，$\phi \in [0 , 2\pi ]$}}{34}{figure.caption.33}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces 無缺陷GaN以及應變結構的點群當$\phi =0^\circ $時，所對應的SHG強度與$\theta $角度的關係，$\theta \in [-\frac {\pi }{2} , \frac {\pi }{2}]$}}{35}{figure.caption.34}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces 當$\phi =0^\circ $，入射光與出射光皆在$xz$平面，單軸應變結構與於缺陷結構的SHG強度與$\theta $角度的關係比較。}}{35}{figure.caption.35}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces 當$\phi =0^\circ $，入射光與出射光皆在$xz$平面，雙軸應變結構與於缺陷結構的SHG強度與$\theta $角度的關係比較。}}{36}{figure.caption.36}%
+\addvspace {10\p@ }
+\contentsfinish 
+\contentsfinish 

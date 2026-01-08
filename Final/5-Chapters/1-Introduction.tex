@@ -1,0 +1,71 @@
+\chapter{緒論}
+\label{ch:intro}
+%化合物半導體
+% 1-1
+\section{研究背景與動機}
+隨著電動車、資料中心及高頻通訊等應用市場的蓬勃發展，半導體元件正朝向高頻、高功率與高溫操作的方向發展。在此趨勢下，傳統矽基半導體逐漸難以滿足這些新興應用對性能的要求，使得具有寬能隙(wide bandgap)特性的化合物半導體因此備受矚目。
+以氮化鎵(GaN)、碳化矽(SiC)等第三代半導體材料，因其具備高擊穿電場、高導熱率、高電子遷移率等優異特性，在光電、功率與射頻元件中展現出廣泛應用的潛力。
+
+
+然而，在化合物半導體的製程與成長過程中，晶體結構中常伴隨各類缺陷的產生，如點缺陷與線缺陷(差排)。這些缺陷會嚴重影響元件的電性特性，如導致漏電流增加\cite{meneghini2021gan}，進而降低元件的可靠性與生產良率，並使製造成本提高。因此，如何有效檢測並控制這些缺陷，已成為化合物半導體產業發展的主要瓶頸。
+
+目前，檢測化合物半導體缺陷的方法主要可分為兩類:破壞性與非破壞性技術。破壞性方法，如穿透式電子顯微鏡(Transmission Electron Microscopy, TEM)雖具有高解析度，但其樣品製備程序繁瑣、成本高昂且無法保留樣品；非破壞性方法，包括Photoluminescence(PL)、X射線繞射(X-ray Diffraction, XRD)與二次諧波產生(Second Harmonic Generation, SHG)等技術，其中SHG具有空間解析能力\cite{campbell20173d}與非破壞性等優勢，成為新興的缺陷檢測工具。
+
+
+% 1-2
+\section{非線性光學(Nonlinear optics)概述}
+在一般的光學現象中，材料對光場的響應多半被視為線性的，意思是材料的極化向量$\mathbf{P}$與外加電場$\mathcal{E}$是呈現性的關係$\mathbf{P}=\epsilon_0\chi^{(1)}\mathbf{\mathcal{E}}$，其中$\epsilon_0$為真空中的介電常數，$\chi^{(1)}$為線性極化率。
+然而當入射光的強度達到一定的程度，如使用高強度的雷射光時，材料內部的極化響應便會出現非線性項，可將極化向量表示為多項式的形式
+\begin{equation}
+\mathbf{P}_i=\epsilon_0\chi^{(1)}_{ij}\mathcal{E}_j+\epsilon_0\chi^{(2)}_{ijk}\mathcal{E}_j\mathcal{E}_k+\epsilon_0\chi^{(3)}_{ijkl}\mathcal{E}_j\mathcal{E}_k\mathcal{E}_l+...
+\end{equation}
+其中$\chi^{(n)}$為n階極化率。$\chi^{(2)}$、$\chi^{(3)}$分別對應二次、三次非線性光學效應，如二次諧波產生(Second harmonic generation, SHG)效應、和頻產生(Sum frequency generation)效應等，這些現象不僅依賴材料的非線性係數，也與其結構對稱性有密切的關係。
+
+% 應該要加文獻，在應用的部分
+非線性光學在1960年代因雷射的發明後迅速發展，廣泛運用在雷射頻率轉換、光通訊、量子光學及非破壞性材料檢測等領域\cite{boyd2008nonlinear}。其中，SHG因具備高靈敏度以及無需螢光標記的特性被廣泛應用於生物醫學領域的非標記活體成像\cite{aghigh2023second, campagnola2003second, esquibel2020second}與三維成像\cite{campbell20173d}，以及雷射技術中的波長轉換、光子晶體與非線性光學材料設計、二維材料中的層間交互與對稱性分析\cite{ma2020rich, ribeiro2015second}等。在材料科學中，SHG可作為一種對結構對稱性變化與局部結構異常極為敏感的探測工具。特別是在化合物半導體中，SHG能非破壞性地檢測成長過程中產生的錯位、堆疊錯誤與介面應變等改變材料對稱性的結構缺陷\cite{shi2016surface}。
+在二維材料中，由於單層材料缺乏中心對稱性，會產生強烈的SHG訊號，並呈現六重對稱的極化圖樣，因此可用來判斷晶體方向與取向\cite{kumar2013second}。此外SHG強度會隨層數變化\cite{li2013probing}，且對入射光偏振方向具高度各項異性，使其成為判斷晶向與結構層級的有效工具。
+% 提到SHG在二維材料的應用
+% 單層TMD依因為破壞了反演對稱姓，展現出非常強的SHG訊號。
+% SHG在單層材料中呈現六重對稱極化圖樣，可用來判斷晶向與取向，適合做為快速無損結構分析技術。
+% SHG對不同層數的二維材料也會有不同的強度變化
+% 由於二維材料的SHG效應對入射光偏振方向具各項異性，可利用此特性判斷其晶向
+% 由於二維材料的SHG效應對入射光偏振方向具各向異性，可藉此推斷其晶體取向
+
+隨著光學顯微技術的進展，SHG 顯微鏡已具深度解析度的二維成像能力，能透過焦點掃描與深度解析，實現對材料內部特定深度位置的結構觀測與晶體定向分析\cite{plotnikov2006characterization}\cite{campagnola2003second}。SHG對材料的對稱性極為敏感，且屬於非破壞性的線性光學探測技術，能有效揭示因缺陷所導致的局部結構變化，並具備三維解析能力，使其在化合物半導體材料的成長製程監控與缺陷分析等領域展現高度應用潛力。
+
+進一步地，二階非線性光學效應的應用已延伸至材料表面\cite{downer2001optical,wang2009surface,yang2009second,lefkidis2005ab,kauranen1994second,shi2016surface}、介面物理\cite{kauranen1994second,shen1989surface,gavrilenko2008differential,savoia2009polar}，以及超晶體結構\cite{fluegel1998second,sharma2003linear}等多種異質系統，並在SHG相關的理論建構與實驗分析方面累積了豐富成果\cite{boyd2008nonlinear,fox2010optical}。綜合而言，SHG不僅提供高解析度的光學探測手段，更在探索材料微觀結構、對稱性破缺與非線性光學性質方面，扮演著不可或缺的角色。
+
+\subsection{晶體缺陷與與SHG關係}
+在化合物半導體生長與製程的過程中，常會伴隨著不同類型的缺陷的產生，如點缺陷(如空缺、間隙原子)、線缺陷(如位錯)、面缺陷(如堆疊錯誤)以及摻雜與雜質等。這些缺陷的產生會影響材料結構的完整性，亦會改變材料的電子結構與局部電場分布，進一步會影響材料的光學性質。
+
+而二次諧波產生是一種對材料的對稱性較為敏感的非線性光學效應。僅有缺乏中心對稱的材料能夠產生SHG訊號；若是材料具有中心對稱性，則其不會產生SHG效應，其SHG訊號應為零。然而，若是材料因成長過程中產生的缺陷，導致晶體局部的對稱性被破壞，即使整體晶體仍保有中心對稱性，亦有可能在缺陷的附近會產生局部的SHG訊號。此外，某些缺陷如差排(Dislocation)或晶界(Grain boundary)會引發晶體中局部的應力場與電場的變化，這些因素也可能會增強SHG的訊號。
+
+從圖~\ref{fig:wafer_SHG_strain}中可以觀察到此現象。圖~\ref{fig:wafer_SHG_strain}(a)顯示的是為在六吋矽基板上成長高電子遷移率電晶體(HEMT)氮化鎵薄膜的拉曼光譜圖\cite{Chiang_2023}，圖中顏色對應於晶體所受的應力分布。可見在晶圓邊緣的應力值較大，中心區域相對較小。圖~\ref{fig:wafer_SHG_strain}(b)為對應的SHG強度圖，顯示出晶圓中心區域的SHG強度較高於邊緣的區域，反映出SHG強度與應力成正相關。
+另一方面，圖~\ref{fig:SHG_intensity}展示了缺陷對SHG的影響。圖~\ref{fig:SHG_intensity}(a)為含有明顯缺陷的h-BN材料，其SHG強度明顯高於圖~\ref{fig:SHG_intensity}(b)中所示的缺陷較少、以機械玻璃方式製備的h-BN樣品。此結果進一步驗晶體中的缺陷會影響SHG響應，並可能增強其訊號強度。
+因此，晶體中的缺陷與應力場所引發的對稱性破壞與局部電場的變化，皆有可能會對SHG訊號有顯著的影響。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{wafer_SHG.jpg}
+    \caption{(a)透過拉曼光譜量測繪製出的應力分布圖。(b)與(a)對應區域的SHG強度分布圖。\cite{Chiang_2023}}
+    \label{fig:wafer_SHG_strain}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{SHG_intensity.jpg}
+    \caption{(a)缺陷h-BN的SHG強度圖，明顯高於無缺陷結構。(b)因經由機械剝離的h-BN其缺陷較少，圖中也可觀察到其SHG強度較微弱。\cite{Cunha_2020}}
+    \label{fig:SHG_intensity}
+\end{figure}
+
+
+
+% 因此這些現象使SHG技術成為一種非破壞性的晶體缺陷檢測的工具，可以用於靈敏地探測晶體內部的非對稱姓與缺陷的分布。也可以透過空間解析的SHG成像技術，對比缺陷的位置與語類型進行分析，進一步評估其對材料性能的影響。由此可見，晶體缺陷與SHG之間存在密切的物理關聯，而這種關聯亦為材料結構診斷提供了強大的研究與應用潛力。
+
+
+% 1-3
+\section{研究目的與章節概要}
+本研究旨在探討化合物半導體中缺陷對二次諧波產生(Second Harmonic Generation, SHG)效應的影響。藉由模擬氮化鎵(GaN)晶體中刃型差排(Edge Dislocation)缺陷的應力場以及堆疊錯誤(Stacking Fault)缺陷，分析其對晶體對稱性及SHG訊號強度與方向性的影響。透過比較不同缺陷與應變狀態以及缺陷結構下材料的非線性光學行為，本研究期望藉由模擬分析缺陷所導致的應變與SHG響應之間的關係，以建立缺陷與SHG效應之間的關聯性，進一步作為預測材料非線性光學行為的依據。
+
+
+第二章將介紹SHG原理、晶體對稱性、缺陷結構以及所採用的模擬方法；第三章呈現模擬結果並探討缺陷與應變對SHG強度在空間中分布的影響；最後，第四章將總結本研究之成果，並提出未來研究方向與應用展望。
